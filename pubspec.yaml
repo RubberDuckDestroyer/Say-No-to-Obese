@@ -1,5 +1,5 @@
-name: hello_world
-description: A new Flutter project.
+name: fitness_freaks
+description: A new kind of personal trainer.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -28,6 +28,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
+  english_words: ^3.1.5
+  mongo_dart: ^0.4.3
 
 dev_dependencies:
   flutter_test:
