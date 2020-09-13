@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:fitness_freaks/HomeScreen.dart';
+import 'package:fitness_freaks/SecondScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
@@ -11,8 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Name Generator',
-      home: RandomWords(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/second': (context) => SecondScreen(),
+      },
+      title: 'Fitness Freaks',
+      // home: RandomWords(), // Commented out because of routing
     );
   }
 }
