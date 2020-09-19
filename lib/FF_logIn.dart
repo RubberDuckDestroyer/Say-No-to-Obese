@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './Dashboard.dart';
+import './FF_dashboard.dart';
 import 'package:adobe_xd/page_link.dart';
-import './Enterdetailspage.dart';
+import './FF_heightAndWeight.dart';
 
-class LogInscreen extends StatelessWidget {
-  LogInscreen({
+class FF_logIn extends StatelessWidget {
+  FF_logIn({
     Key key,
   }) : super(key: key);
   @override
@@ -15,15 +15,15 @@ class LogInscreen extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Transform.translate(
-            offset: Offset(45.0, 253.0),
+            offset: Offset(64.0, 196.0),
             child: SizedBox(
               width: 287.0,
-              height: 42.0,
+              height: 41.0,
               child: Stack(
                 children: <Widget>[
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 287.0, 42.0),
-                    size: Size(287.0, 42.0),
+                    bounds: Rect.fromLTWH(0.0, 0.0, 287.0, 41.0),
+                    size: Size(287.0, 41.0),
                     pinLeft: true,
                     pinRight: true,
                     pinTop: true,
@@ -40,7 +40,7 @@ class LogInscreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(145.0, 263.0),
+            offset: Offset(164.0, 206.0),
             child: SizedBox(
               width: 90.0,
               height: 21.0,
@@ -57,7 +57,7 @@ class LogInscreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(174.0, 488.0),
+            offset: Offset(193.0, 427.0),
             child: SizedBox(
               width: 28.0,
               height: 21.0,
@@ -75,7 +75,7 @@ class LogInscreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(138.0, 648.0),
+            offset: Offset(156.0, 565.0),
             child: SizedBox(
               width: 99.0,
               height: 21.0,
@@ -93,15 +93,15 @@ class LogInscreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(45.0, 334.0),
+            offset: Offset(64.0, 276.0),
             child: SizedBox(
               width: 288.0,
-              height: 42.0,
+              height: 41.0,
               child: Stack(
                 children: <Widget>[
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 288.0, 42.0),
-                    size: Size(288.0, 42.0),
+                    bounds: Rect.fromLTWH(0.0, 0.0, 288.0, 41.0),
+                    size: Size(288.0, 41.0),
                     pinLeft: true,
                     pinRight: true,
                     pinTop: true,
@@ -114,11 +114,10 @@ class LogInscreen extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(101.0, 10.0, 84.0, 21.0),
-                    size: Size(288.0, 42.0),
-                    pinTop: true,
-                    pinBottom: true,
+                    bounds: Rect.fromLTWH(101.0, 9.0, 84.0, 21.0),
+                    size: Size(288.0, 41.0),
                     fixedWidth: true,
+                    fixedHeight: true,
                     child: Text(
                       'Password',
                       style: TextStyle(
@@ -135,24 +134,24 @@ class LogInscreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(45.0, 424.0),
+            offset: Offset(64.0, 364.0),
             child: PageLink(
               links: [
                 PageLinkInfo(
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => Dashboard(),
+                  pageBuilder: () => FF_dashboard(),
                 ),
               ],
               child: SizedBox(
                 width: 287.0,
-                height: 42.0,
+                height: 41.0,
                 child: Stack(
                   children: <Widget>[
                     Pinned.fromSize(
-                      bounds: Rect.fromLTWH(0.0, 0.0, 287.0, 42.0),
-                      size: Size(287.0, 42.0),
+                      bounds: Rect.fromLTWH(0.0, 0.0, 287.0, 41.0),
+                      size: Size(287.0, 41.0),
                       pinLeft: true,
                       pinRight: true,
                       pinTop: true,
@@ -160,8 +159,8 @@ class LogInscreen extends StatelessWidget {
                       child: Stack(
                         children: <Widget>[
                           Pinned.fromSize(
-                            bounds: Rect.fromLTWH(0.0, 0.0, 287.0, 42.0),
-                            size: Size(287.0, 42.0),
+                            bounds: Rect.fromLTWH(0.0, 0.0, 287.0, 41.0),
+                            size: Size(287.0, 41.0),
                             pinLeft: true,
                             pinRight: true,
                             pinTop: true,
@@ -169,8 +168,8 @@ class LogInscreen extends StatelessWidget {
                             child: Stack(
                               children: <Widget>[
                                 Pinned.fromSize(
-                                  bounds: Rect.fromLTWH(0.0, 0.0, 287.0, 42.0),
-                                  size: Size(287.0, 42.0),
+                                  bounds: Rect.fromLTWH(0.0, 0.0, 287.0, 41.0),
+                                  size: Size(287.0, 41.0),
                                   pinLeft: true,
                                   pinRight: true,
                                   pinTop: true,
@@ -197,7 +196,7 @@ class LogInscreen extends StatelessWidget {
                     ),
                     Pinned.fromSize(
                       bounds: Rect.fromLTWH(113.0, 11.0, 61.0, 21.0),
-                      size: Size(287.0, 42.0),
+                      size: Size(287.0, 41.0),
                       fixedWidth: true,
                       fixedHeight: true,
                       child: Text(
@@ -217,14 +216,14 @@ class LogInscreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(45.0, 531.0),
+            offset: Offset(64.0, 469.0),
             child: PageLink(
               links: [
                 PageLinkInfo(
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => Enterdetailspage(),
+                  pageBuilder: () => FF_heightAndWeight(),
                 ),
               ],
               child: SizedBox(
@@ -275,15 +274,15 @@ class LogInscreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(45.0, 686.0),
+            offset: Offset(63.0, 608.0),
             child: SizedBox(
               width: 285.0,
-              height: 42.0,
+              height: 41.0,
               child: Stack(
                 children: <Widget>[
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 285.0, 42.0),
-                    size: Size(285.0, 42.0),
+                    bounds: Rect.fromLTWH(0.0, 0.0, 285.0, 41.0),
+                    size: Size(285.0, 41.0),
                     pinLeft: true,
                     pinRight: true,
                     pinTop: true,
@@ -291,8 +290,8 @@ class LogInscreen extends StatelessWidget {
                     child: Stack(
                       children: <Widget>[
                         Pinned.fromSize(
-                          bounds: Rect.fromLTWH(0.0, 0.0, 285.0, 42.0),
-                          size: Size(285.0, 42.0),
+                          bounds: Rect.fromLTWH(0.0, 0.0, 285.0, 41.0),
+                          size: Size(285.0, 41.0),
                           pinLeft: true,
                           pinRight: true,
                           pinTop: true,
@@ -300,8 +299,8 @@ class LogInscreen extends StatelessWidget {
                           child: Stack(
                             children: <Widget>[
                               Pinned.fromSize(
-                                bounds: Rect.fromLTWH(0.0, 0.0, 285.0, 42.0),
-                                size: Size(285.0, 42.0),
+                                bounds: Rect.fromLTWH(0.0, 0.0, 285.0, 41.0),
+                                size: Size(285.0, 41.0),
                                 pinLeft: true,
                                 pinRight: true,
                                 pinTop: true,
@@ -327,11 +326,12 @@ class LogInscreen extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(45.0, 11.0, 196.0, 21.0),
-                    size: Size(285.0, 42.0),
+                    bounds: Rect.fromLTWH(45.0, 10.0, 196.0, 21.0),
+                    size: Size(285.0, 41.0),
                     pinLeft: true,
                     pinRight: true,
-                    fixedHeight: true,
+                    pinTop: true,
+                    pinBottom: true,
                     child: Text(
                       'Forgot my password',
                       style: TextStyle(
@@ -348,15 +348,15 @@ class LogInscreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(46.0, 66.0),
+            offset: Offset(68.0, 43.0),
             child: SizedBox(
               width: 275.0,
-              height: 114.0,
+              height: 174.0,
               child: Stack(
                 children: <Widget>[
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 275.0, 103.0),
-                    size: Size(275.0, 114.0),
+                    bounds: Rect.fromLTWH(0.0, 0.0, 275.0, 174.0),
+                    size: Size(275.0, 174.0),
                     pinLeft: true,
                     pinRight: true,
                     pinTop: true,
@@ -380,10 +380,9 @@ class LogInscreen extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(123.0, 101.0, 136.0, 13.0),
-                    size: Size(275.0, 114.0),
+                    bounds: Rect.fromLTWH(123.0, 99.0, 136.0, 13.0),
+                    size: Size(275.0, 174.0),
                     pinRight: true,
-                    pinBottom: true,
                     fixedWidth: true,
                     fixedHeight: true,
                     child: Text(

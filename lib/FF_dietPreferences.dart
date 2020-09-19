@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './Dashboard.dart';
+import './FF_dashboard.dart';
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Enterdetailspage1 extends StatelessWidget {
-  Enterdetailspage1({
+class FF_dietPreferences extends StatelessWidget {
+  FF_dietPreferences({
     Key key,
   }) : super(key: key);
   @override
@@ -15,37 +15,37 @@ class Enterdetailspage1 extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Transform.translate(
-            offset: Offset(74.0, 131.0),
+            offset: Offset(78.0, 122.2),
             child: SizedBox(
-              width: 224.0,
-              height: 47.0,
+              width: 253.0,
+              height: 43.0,
               child: Stack(
                 children: <Widget>[
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(131.0, 0.0, 93.0, 35.0),
-                    size: Size(224.0, 47.0),
+                    bounds: Rect.fromLTWH(148.0, 0.0, 105.1, 31.6),
+                    size: Size(253.0, 42.8),
                     pinRight: true,
                     pinTop: true,
                     fixedWidth: true,
                     fixedHeight: true,
                     child: SvgPicture.string(
-                      _svg_4zfbwl,
+                      _svg_bf6ytz,
                       allowDrawingOutsideViewBox: true,
                       fit: BoxFit.fill,
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 7.0, 114.0, 40.0),
-                    size: Size(224.0, 47.0),
+                    bounds: Rect.fromLTWH(0.0, 6.8, 94.0, 36.0),
+                    size: Size(253.0, 42.8),
                     pinLeft: true,
-                    pinTop: true,
                     pinBottom: true,
                     fixedWidth: true,
+                    fixedHeight: true,
                     child: Text(
                       'WEIGHT (KG):\n',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 17,
+                        fontSize: 14,
                         color: const Color(0xffffffff),
                         fontWeight: FontWeight.w200,
                       ),
@@ -61,8 +61,8 @@ class Enterdetailspage1 extends StatelessWidget {
             child: Transform.rotate(
               angle: 0.0,
               child: SizedBox(
-                width: 288.0,
-                height: 63.0,
+                width: 325.0,
+                height: 57.0,
                 child: SingleChildScrollView(
                     child: Text(
                   'SELECT YOUR WEIGHT GOAL \n',
@@ -78,32 +78,32 @@ class Enterdetailspage1 extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(47.0, 654.0),
+            offset: Offset(47.0, 595.0),
             child: Container(
-              width: 281.0,
-              height: 107.0,
+              width: 318.0,
+              height: 96.0,
               decoration: BoxDecoration(),
             ),
           ),
           Transform.translate(
-            offset: Offset(47.0, 705.0),
+            offset: Offset(47.0, 641.0),
             child: PageLink(
               links: [
                 PageLinkInfo(
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => Dashboard(),
+                  pageBuilder: () => FF_dashboard(),
                 ),
               ],
               child: SizedBox(
-                width: 284.0,
-                height: 42.0,
+                width: 321.0,
+                height: 38.0,
                 child: Stack(
                   children: <Widget>[
                     Pinned.fromSize(
-                      bounds: Rect.fromLTWH(0.0, 0.0, 284.0, 42.0),
-                      size: Size(284.0, 42.0),
+                      bounds: Rect.fromLTWH(0.0, 0.0, 321.0, 38.0),
+                      size: Size(321.0, 38.0),
                       pinLeft: true,
                       pinRight: true,
                       pinTop: true,
@@ -111,8 +111,8 @@ class Enterdetailspage1 extends StatelessWidget {
                       child: Stack(
                         children: <Widget>[
                           Pinned.fromSize(
-                            bounds: Rect.fromLTWH(0.0, 0.0, 284.0, 42.0),
-                            size: Size(284.0, 42.0),
+                            bounds: Rect.fromLTWH(0.0, 0.0, 321.0, 38.0),
+                            size: Size(321.0, 38.0),
                             pinLeft: true,
                             pinRight: true,
                             pinTop: true,
@@ -120,8 +120,8 @@ class Enterdetailspage1 extends StatelessWidget {
                             child: Stack(
                               children: <Widget>[
                                 Pinned.fromSize(
-                                  bounds: Rect.fromLTWH(0.0, 0.0, 284.0, 42.0),
-                                  size: Size(284.0, 42.0),
+                                  bounds: Rect.fromLTWH(0.0, 0.0, 321.0, 38.0),
+                                  size: Size(321.0, 38.0),
                                   pinLeft: true,
                                   pinRight: true,
                                   pinTop: true,
@@ -147,12 +147,13 @@ class Enterdetailspage1 extends StatelessWidget {
                       ),
                     ),
                     Pinned.fromSize(
-                      bounds: Rect.fromLTWH(45.0, 11.0, 195.0, 21.0),
-                      size: Size(284.0, 42.0),
+                      bounds: Rect.fromLTWH(51.0, 10.0, 220.0, 19.0),
+                      size: Size(321.0, 38.0),
                       pinLeft: true,
                       pinRight: true,
                       fixedHeight: true,
-                      child: Text(
+                      child: SingleChildScrollView(
+                          child: Text(
                         'CONTINUE',
                         style: TextStyle(
                           fontFamily: 'Montserrat',
@@ -161,15 +162,16 @@ class Enterdetailspage1 extends StatelessWidget {
                           fontWeight: FontWeight.w900,
                         ),
                         textAlign: TextAlign.center,
-                      ),
+                      )),
                     ),
                     Pinned.fromSize(
-                      bounds: Rect.fromLTWH(45.0, 11.0, 195.0, 21.0),
-                      size: Size(284.0, 42.0),
+                      bounds: Rect.fromLTWH(51.0, 10.0, 220.0, 19.0),
+                      size: Size(321.0, 38.0),
                       pinLeft: true,
                       pinRight: true,
                       fixedHeight: true,
-                      child: Text(
+                      child: SingleChildScrollView(
+                          child: Text(
                         'CONTINUE',
                         style: TextStyle(
                           fontFamily: 'Montserrat',
@@ -178,7 +180,7 @@ class Enterdetailspage1 extends StatelessWidget {
                           fontWeight: FontWeight.w900,
                         ),
                         textAlign: TextAlign.center,
-                      ),
+                      )),
                     ),
                   ],
                 ),
@@ -186,12 +188,12 @@ class Enterdetailspage1 extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(57.2, 198.7),
+            offset: Offset(59.0, 183.3),
             child: Transform.rotate(
               angle: 0.0,
               child: SizedBox(
-                width: 261.0,
-                height: 63.0,
+                width: 295.0,
+                height: 57.0,
                 child: SingleChildScrollView(
                     child: Text(
                   'SELECT YOUR MEAL PREFERENCES\n',
@@ -207,15 +209,15 @@ class Enterdetailspage1 extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(113.0, 282.0),
+            offset: Offset(122.0, 259.0),
             child: SizedBox(
-              width: 149.0,
-              height: 260.0,
+              width: 168.0,
+              height: 234.0,
               child: Stack(
                 children: <Widget>[
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 90.0, 20.0),
-                    size: Size(149.0, 260.0),
+                    bounds: Rect.fromLTWH(0.0, 0.0, 74.0, 18.0),
+                    size: Size(168.0, 234.0),
                     pinLeft: true,
                     pinTop: true,
                     fixedWidth: true,
@@ -224,7 +226,7 @@ class Enterdetailspage1 extends StatelessWidget {
                       'Vegetarian',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 17,
+                        fontSize: 14,
                         color: const Color(0xffffffff),
                         fontWeight: FontWeight.w200,
                       ),
@@ -232,8 +234,8 @@ class Enterdetailspage1 extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 60.0, 54.0, 20.0),
-                    size: Size(149.0, 260.0),
+                    bounds: Rect.fromLTWH(0.0, 54.0, 44.0, 18.0),
+                    size: Size(168.0, 234.0),
                     pinLeft: true,
                     fixedWidth: true,
                     fixedHeight: true,
@@ -241,7 +243,7 @@ class Enterdetailspage1 extends StatelessWidget {
                       'Vegan',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 17,
+                        fontSize: 14,
                         color: const Color(0xffffffff),
                         fontWeight: FontWeight.w200,
                       ),
@@ -249,8 +251,8 @@ class Enterdetailspage1 extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 120.0, 98.0, 20.0),
-                    size: Size(149.0, 260.0),
+                    bounds: Rect.fromLTWH(0.0, 108.0, 80.0, 18.0),
+                    size: Size(168.0, 234.0),
                     pinLeft: true,
                     fixedWidth: true,
                     fixedHeight: true,
@@ -258,7 +260,7 @@ class Enterdetailspage1 extends StatelessWidget {
                       'Gluten Free',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 17,
+                        fontSize: 14,
                         color: const Color(0xffffffff),
                         fontWeight: FontWeight.w200,
                       ),
@@ -266,8 +268,8 @@ class Enterdetailspage1 extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 180.0, 86.0, 20.0),
-                    size: Size(149.0, 260.0),
+                    bounds: Rect.fromLTWH(0.0, 162.0, 70.0, 18.0),
+                    size: Size(168.0, 234.0),
                     pinLeft: true,
                     fixedWidth: true,
                     fixedHeight: true,
@@ -275,7 +277,7 @@ class Enterdetailspage1 extends StatelessWidget {
                       'Dairy Free',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 17,
+                        fontSize: 14,
                         color: const Color(0xffffffff),
                         fontWeight: FontWeight.w200,
                       ),
@@ -283,8 +285,8 @@ class Enterdetailspage1 extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(132.0, 2.0, 17.0, 17.0),
-                    size: Size(149.0, 260.0),
+                    bounds: Rect.fromLTWH(149.0, 1.0, 19.0, 16.0),
+                    size: Size(168.0, 234.0),
                     pinRight: true,
                     pinTop: true,
                     fixedWidth: true,
@@ -297,8 +299,8 @@ class Enterdetailspage1 extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(132.0, 62.0, 17.0, 17.0),
-                    size: Size(149.0, 260.0),
+                    bounds: Rect.fromLTWH(149.0, 56.0, 19.0, 15.0),
+                    size: Size(168.0, 234.0),
                     pinRight: true,
                     fixedWidth: true,
                     fixedHeight: true,
@@ -310,8 +312,8 @@ class Enterdetailspage1 extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(132.0, 122.0, 17.0, 17.0),
-                    size: Size(149.0, 260.0),
+                    bounds: Rect.fromLTWH(149.0, 110.0, 19.0, 15.0),
+                    size: Size(168.0, 234.0),
                     pinRight: true,
                     fixedWidth: true,
                     fixedHeight: true,
@@ -323,8 +325,8 @@ class Enterdetailspage1 extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(132.0, 182.0, 17.0, 17.0),
-                    size: Size(149.0, 260.0),
+                    bounds: Rect.fromLTWH(149.0, 164.0, 19.0, 15.0),
+                    size: Size(168.0, 234.0),
                     pinRight: true,
                     fixedWidth: true,
                     fixedHeight: true,
@@ -336,8 +338,8 @@ class Enterdetailspage1 extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(134.0, 4.0, 13.0, 13.0),
-                    size: Size(149.0, 260.0),
+                    bounds: Rect.fromLTWH(151.0, 3.0, 15.0, 12.0),
+                    size: Size(168.0, 234.0),
                     pinRight: true,
                     pinTop: true,
                     fixedWidth: true,
@@ -350,8 +352,8 @@ class Enterdetailspage1 extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(134.0, 184.0, 13.0, 13.0),
-                    size: Size(149.0, 260.0),
+                    bounds: Rect.fromLTWH(151.0, 166.0, 15.0, 12.0),
+                    size: Size(168.0, 234.0),
                     pinRight: true,
                     fixedWidth: true,
                     fixedHeight: true,
@@ -363,8 +365,8 @@ class Enterdetailspage1 extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 240.0, 50.0, 20.0),
-                    size: Size(149.0, 260.0),
+                    bounds: Rect.fromLTWH(0.0, 216.0, 40.0, 18.0),
+                    size: Size(168.0, 234.0),
                     pinLeft: true,
                     pinBottom: true,
                     fixedWidth: true,
@@ -373,7 +375,7 @@ class Enterdetailspage1 extends StatelessWidget {
                       'Other',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 17,
+                        fontSize: 14,
                         color: const Color(0xffffffff),
                         fontWeight: FontWeight.w200,
                       ),
@@ -381,8 +383,8 @@ class Enterdetailspage1 extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(132.0, 240.0, 17.0, 17.0),
-                    size: Size(149.0, 260.0),
+                    bounds: Rect.fromLTWH(149.0, 216.0, 19.0, 16.0),
+                    size: Size(168.0, 234.0),
                     pinRight: true,
                     pinBottom: true,
                     fixedWidth: true,
@@ -399,10 +401,10 @@ class Enterdetailspage1 extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(47.0, 601.0),
+            offset: Offset(47.0, 547.0),
             child: Container(
-              width: 284.0,
-              height: 63.0,
+              width: 321.0,
+              height: 57.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.0),
                 color: const Color(0xffffffff),
@@ -410,14 +412,14 @@ class Enterdetailspage1 extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(40.6, 570.0),
+            offset: Offset(41.8, 519.0),
             child: SizedBox(
-              width: 77.0,
+              width: 62.0,
               child: Text(
                 'Specify:',
                 style: TextStyle(
                   fontFamily: 'Montserrat',
-                  fontSize: 17,
+                  fontSize: 14,
                   color: const Color(0xffffffff),
                   fontWeight: FontWeight.w200,
                 ),
@@ -431,5 +433,5 @@ class Enterdetailspage1 extends StatelessWidget {
   }
 }
 
-const String _svg_4zfbwl =
-    '<svg viewBox="206.0 216.0 93.0 35.0" ><path transform="translate(206.0, 216.0)" d="M 17.5 0 L 75.5 0 C 85.16498565673828 0 93 7.835016250610352 93 17.5 C 93 27.16498374938965 85.16498565673828 35 75.5 35 L 17.5 35 C 7.835016250610352 35 0 27.16498374938965 0 17.5 C 0 7.835016250610352 7.835016250610352 0 17.5 0 Z" fill="#ffffff" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_bf6ytz =
+    '<svg viewBox="148.0 0.0 105.1 31.6" ><path transform="translate(147.99, 0.0)" d="M 19.76985359191895 0 L 85.29279327392578 0 C 96.21138763427734 0 105.0626525878906 7.079398632049561 105.0626525878906 15.81228065490723 C 105.0626525878906 24.54516220092773 96.21138763427734 31.62456130981445 85.29279327392578 31.62456130981445 L 19.76985359191895 31.62456130981445 C 8.851263999938965 31.62456130981445 0 24.54516220092773 0 15.81228065490723 C 0 7.079398632049561 8.851263999938965 0 19.76985359191895 0 Z" fill="#ffffff" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
