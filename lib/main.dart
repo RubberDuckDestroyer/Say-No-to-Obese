@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'FF_logIn.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    title: 'Fitness Freak',
+    home: FF_logIn(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
