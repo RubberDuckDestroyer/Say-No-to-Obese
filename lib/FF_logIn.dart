@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:fitness_freaks/FF_heightAndWeight.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -214,8 +216,10 @@ class FF_logIn extends StatelessWidget {
                       fixedHeight: true,
                       child: RaisedButton(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => FF_heightAndWeight()));
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => FF_heightAndWeight()));
                         },
                         color: const Color(0xff2980b9),
                         child: Text(
@@ -271,12 +275,15 @@ class FF_logIn extends StatelessWidget {
                       fixedWidth: true,
                       fixedHeight: true,
                       child: RaisedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => FF_heightAndWeight()));
-                        },
+                        onPressed: null, //{
+                        //   print('button pressed');
+                        //   Navigator.push(
+                        //       context,
+                        //       new MaterialPageRoute(
+                        //           builder: (context) => FF_heightAndWeight()));
+                        // },
                         color: const Color(0xff27ae60),
-                        child: Text(
+                        child: const Text(
                           "Sign Up",
                           style: TextStyle(
                             fontFamily: 'Montserrat',
