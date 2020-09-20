@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'FF_heightAndWeight.dart';
 import 'FF_logIn.dart';
 
 void main() {
   runApp(MaterialApp(
     title: 'Fitness Freak',
-    home: FF_logIn(),
   ));
 }
 
