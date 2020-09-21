@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
+import 'controllers/loginController.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 // import 'FF_heightAndWeight.dart';
 import 'FF_logIn.dart';
 
-void main() {
-  runApp(MyApp());
+Future<void> main() async {
+  final conn = LoginController();
+  await DotEnv().load('.env');
+  String uri = DotEnv().env["MONGO_URI"];
+  final connect = await conn.connect(uri);
+
+  if (connect) {
+    runApp(MyApp());
+  } else {
+    print("ERROR Could not connect to database");
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -11,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Fitness Freaks',
       theme: ThemeData(
         // This is the theme of your application.
         //
