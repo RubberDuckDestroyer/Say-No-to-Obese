@@ -7,10 +7,13 @@ import 'FF_logIn.dart';
 Future<void> main() async {
   final conn = LoginController();
   await DotEnv().load('.env');
-  String uri = DotEnv().env["MONGO_URI"];
+  // String uri = DotEnv().env["MONGO_URI"];
+  String uri =
+      "mongodb+srv://fitnessfreaks:roW4x8esRB91viFi@cluster0.bqckt.mongodb.net/main?retryWrites=true&w=majority";
   final connect = await conn.connect(uri);
 
   if (connect) {
+    print("running app");
     runApp(MyApp());
   } else {
     print("ERROR Could not connect to database");
