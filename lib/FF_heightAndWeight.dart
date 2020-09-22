@@ -4,12 +4,16 @@ import './FF_dietPreferences.dart';
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'FF_dashboard.dart';
+
 class FF_heightAndWeight extends StatelessWidget {
   FF_heightAndWeight({
     Key key,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    // color: pressAttention ? Colors.grey : Colors.blue,
     return Scaffold(
       backgroundColor: const Color(0xff343a5e),
       body: Stack(
@@ -32,132 +36,134 @@ class FF_heightAndWeight extends StatelessWidget {
               )),
             ),
           ),
+
+          //--------------------------------------Weight-------------------------------------
+
           Transform.translate(
-            offset: Offset(92.0, 109.0),
+            offset: Offset(80.0, 200.0),
             child: SizedBox(
-              width: 225.0,
-              height: 113.0,
-              child: Stack(
-                children: <Widget>[
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(131.0, 66.0, 93.0, 35.0),
-                    size: Size(225.0, 113.0),
-                    pinRight: true,
-                    pinBottom: true,
-                    fixedWidth: true,
-                    fixedHeight: true,
-                    child: SvgPicture.string(
-                      _svg_4zfbwl,
-                      allowDrawingOutsideViewBox: true,
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 225.0, 93.0),
-                    size: Size(225.0, 113.0),
-                    pinLeft: true,
-                    pinRight: true,
-                    pinTop: true,
-                    pinBottom: true,
-                    child: Stack(
-                      children: <Widget>[
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(0.0, 6.0, 119.0, 26.0),
-                          size: Size(225.0, 93.0),
-                          pinLeft: true,
-                          pinTop: true,
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: SingleChildScrollView(
-                              child: Text(
-                            'HEIGHT (CM):\n',
-                            style: TextStyle(
-                              fontFamily: 'Montserrat',
-                              fontSize: 17,
-                              color: const Color(0xffffffff),
-                              fontWeight: FontWeight.w200,
-                            ),
-                            textAlign: TextAlign.left,
-                          )),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(130.0, 0.0, 95.0, 35.0),
-                          size: Size(225.0, 93.0),
-                          pinRight: true,
-                          pinTop: true,
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(18.0),
-                              color: const Color(0xffffffff),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(201.0, 10.0, 15.0, 15.0),
-                          size: Size(225.0, 93.0),
-                          pinRight: true,
-                          pinTop: true,
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: SvgPicture.string(
-                            _svg_m8rjcy,
-                            allowDrawingOutsideViewBox: true,
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(201.0, 78.0, 15.0, 15.0),
-                          size: Size(225.0, 93.0),
-                          pinRight: true,
-                          pinBottom: true,
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: SvgPicture.string(
-                            _svg_3an77,
-                            allowDrawingOutsideViewBox: true,
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(201.0, 78.0, 15.0, 15.0),
-                          size: Size(225.0, 93.0),
-                          pinRight: true,
-                          pinBottom: true,
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: SvgPicture.string(
-                            _svg_3an77,
-                            allowDrawingOutsideViewBox: true,
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 73.0, 114.0, 40.0),
-                    size: Size(225.0, 113.0),
-                    pinLeft: true,
-                    pinBottom: true,
-                    fixedWidth: true,
-                    fixedHeight: true,
-                    child: Text(
-                      'WEIGHT (KG):\n',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 17,
-                        color: const Color(0xffffffff),
-                        fontWeight: FontWeight.w200,
-                      ),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                ],
-              ),
+              width: 100.0,
+              height: 36.0,
+              child: SingleChildScrollView(
+                  child: Text(
+                'Weight: \n',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 23,
+                  color: const Color(0xffffffff),
+                  fontWeight: FontWeight.w400,
+                ),
+                textAlign: TextAlign.left,
+              )),
             ),
           ),
+
+
+          SizedBox(
+            width: 287.0,
+            height: 41.0,
+            child: Stack(
+              children: <Widget>[
+                Pinned.fromSize(
+                  bounds: Rect.fromLTWH(200.0, 195.0, 90.0, 41.0),
+                  size: Size(287.0, 41.0),
+                  pinLeft: true,
+                  pinRight: true,
+                  pinTop: true,
+                  pinBottom: true,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(21.0),
+                      color: const Color(0xffffffff),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          Stack(
+            children: [
+              Positioned(
+                top: 190,
+                left: 200,
+                width: 90.0,
+                height: 47.0,
+                child: TextField(
+                  enabled: true,
+                  decoration: InputDecoration(hintText: ' kg'),
+                  textAlign: TextAlign.center,
+                  
+                ),
+              ),
+            ],
+          ),
+
+        //-------------------------------------Height-------------------------------------------
+
+        Transform.translate(
+            offset: Offset(80.0, 120.0),
+            child: SizedBox(
+              width: 100.0,
+              height: 36.0,
+              child: SingleChildScrollView(
+                  child: Text(
+                'Height: \n',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 23,
+                  color: const Color(0xffffffff),
+                  fontWeight: FontWeight.w400,
+                ),
+                textAlign: TextAlign.left,
+              )),
+            ),
+          ),
+
+
+          SizedBox(
+            width: 287.0,
+            height: 41.0,
+            child: Stack(
+              children: <Widget>[
+                Pinned.fromSize(
+                  bounds: Rect.fromLTWH(200.0, 115.0, 90.0, 41.0),
+                  size: Size(287.0, 41.0),
+                  pinLeft: true,
+                  pinRight: true,
+                  pinTop: true,
+                  pinBottom: true,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(21.0),
+                      color: const Color(0xffffffff),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          Stack(
+            children: [
+              Positioned(
+                top: 110,
+                left: 200,
+                width: 90.0,
+                height: 47.0,
+                child: TextField(
+                  enabled: true,
+                  decoration: InputDecoration(hintText: ' cm'),
+                  textAlign: TextAlign.center,
+                  
+                  
+                ),
+              ),
+            ],
+          ),
+
+
+          //----------------------------Set your Goal-------------------------------
           Transform.translate(
             offset: Offset(80.0, 254.0),
             child: SizedBox(
@@ -176,99 +182,75 @@ class FF_heightAndWeight extends StatelessWidget {
               )),
             ),
           ),
-          Transform.translate(
-            offset: Offset(65.0, 662.0),
-            child: Container(
-              width: 281.0,
-              height: 107.0,
-              decoration: BoxDecoration(),
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(65.0, 299.0),
-            child: SizedBox(
-              width: 281.0,
-              height: 109.0,
-              child: Stack(
-                children: <Widget>[
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 281.0, 109.2),
-                    size: Size(281.0, 109.2),
-                    pinLeft: true,
-                    pinRight: true,
-                    pinTop: true,
-                    pinBottom: true,
-                    child: SvgPicture.string(
-                      _svg_nxwug2,
-                      allowDrawingOutsideViewBox: true,
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(52.0, 40.0, 177.0, 29.0),
-                    size: Size(281.0, 109.2),
-                    pinLeft: true,
-                    pinRight: true,
-                    fixedHeight: true,
-                    child: SingleChildScrollView(
-                        child: Text(
-                      'GAIN MUSCLE\n',
+
+          //--------------------------------Gain Muscle------------------------
+
+          Stack(
+            children: [
+              Positioned(
+                  top: 300,
+                  left: 70,
+                  width: 281,
+                  height: 107,
+                  child: RaisedButton(
+                    onPressed: () {
+
+                    },
+                    // color: pressAttention ? Colors.grey : Colors.blue,
+                    // onPressed: () => SetState(() => pressAttention = !pressAttention), 
+                 
+                  
+                    // color: pressAttention ? Colors.grey : Colors.blue,
+                    // onPressed: () => SetState(() => pressAttention = !pressAttention), 
+                 
+                    color: const Color(0xff2980b9),
+                    child: Text(
+                      'Gain Muscle',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 23,
-                        color: const Color(0xff000000),
+                        fontSize: 20,
+                        color: const Color(0xffffffff),
                         fontWeight: FontWeight.w900,
                       ),
-                      textAlign: TextAlign.left,
-                    )),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(65.0, 466.0),
-            child: SizedBox(
-              width: 281.0,
-              height: 109.0,
-              child: Stack(
-                children: <Widget>[
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 281.0, 109.2),
-                    size: Size(281.0, 109.2),
-                    pinLeft: true,
-                    pinRight: true,
-                    pinTop: true,
-                    pinBottom: true,
-                    child: SvgPicture.string(
-                      _svg_3kiz0e,
-                      allowDrawingOutsideViewBox: true,
-                      fit: BoxFit.fill,
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(79.0, 41.0, 123.0, 28.0),
-                    size: Size(281.0, 109.2),
-                    fixedWidth: true,
-                    fixedHeight: true,
-                    child: SingleChildScrollView(
-                        child: Text(
-                      'LOSE FAT\n',
+                  ))
+            ],
+          ),
+
+          //--------------------------------Lose Fat---------------------------------
+
+           Stack(
+            children: [
+              Positioned(
+                  top: 470,
+                  left: 70,
+                  width: 281,
+                  height: 107,
+                  child: FlatButton(
+                    onPressed: () {
+                      
+                    },
+                    color: const Color(0xff2980b9),
+                    child: Text(
+                      'Lose Fat',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 23,
-                        color: const Color(0xff000000),
+                        fontSize: 20,
+                        color: const Color(0xffffffff),
                         fontWeight: FontWeight.w900,
                       ),
-                      textAlign: TextAlign.left,
-                    )),
-                  ),
-                ],
-              ),
-            ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ))
+            ],
           ),
+
+
+          //------------------------------------Page Link--------------------------------
+
           Transform.translate(
-            offset: Offset(63.0, 634.0),
+            offset: Offset(63.0, 615.0),
             child: PageLink(
               links: [
                 PageLinkInfo(
@@ -328,23 +310,9 @@ class FF_heightAndWeight extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(45.0, 11.0, 196.0, 21.0),
-                      size: Size(285.0, 42.0),
-                      pinLeft: true,
-                      pinRight: true,
-                      fixedHeight: true,
-                      child: Text(
-                        'CONTINUE',
-                        style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontSize: 17,
-                          color: const Color(0xffffffff),
-                          fontWeight: FontWeight.w900,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
+
+                    //------------------------------------Continue button--------------------------------
+
                     Pinned.fromSize(
                       bounds: Rect.fromLTWH(45.0, 11.0, 196.0, 21.0),
                       size: Size(285.0, 42.0),
@@ -395,6 +363,7 @@ class FF_heightAndWeight extends StatelessWidget {
         ],
       ),
     );
+  
   }
 }
 
