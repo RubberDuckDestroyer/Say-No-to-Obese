@@ -1,6 +1,7 @@
 import 'dart:ffi';
 import 'package:fitness_freaks/FF_dashboard.dart';
 import 'package:fitness_freaks/FF_heightAndWeight.dart';
+import 'package:fitness_freaks/FF_signUp.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:fitness_freaks/controllers/loginController.dart';
@@ -154,7 +155,7 @@ class FF_logIn extends StatelessWidget {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => FF_heightAndWeight()));
+                              builder: (context) => FF_signUp()));
                     },
                     color: const Color(0xff27ae60),
                     child: const Text(
