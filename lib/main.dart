@@ -1,3 +1,4 @@
+import 'package:fitness_freaks/FF_resetPassword.dart';
 import 'package:flutter/material.dart';
 import 'controllers/loginController.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
