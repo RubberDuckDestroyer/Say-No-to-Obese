@@ -87,7 +87,6 @@ class FF_signUp extends StatelessWidget {
             ),
           ),
 
-
           //--------------------------------------------------------------------Sign up button -------------------------------------------------------------
           Stack(
             children: [
@@ -117,7 +116,7 @@ class FF_signUp extends StatelessWidget {
                   ))
             ],
           ),
-          
+
           //----------------------------------------------Name------------------------------------------
 
           SizedBox(
@@ -159,7 +158,6 @@ class FF_signUp extends StatelessWidget {
             ],
           ),
 
-
           //------------------------------------------------------Username box and text input--------------------------------------------------------
           SizedBox(
             width: 287.0,
@@ -194,7 +192,8 @@ class FF_signUp extends StatelessWidget {
                 child: TextField(
                   // controller: nameController,
                   enabled: true,
-                  decoration: InputDecoration(hintText: 'Enter your Email Address'),
+                  decoration:
+                      InputDecoration(hintText: 'Enter your Email Address'),
                 ),
               ),
             ],
@@ -236,6 +235,7 @@ class FF_signUp extends StatelessWidget {
                   // controller: passController,
                   enabled: true,
                   decoration: InputDecoration(hintText: 'Pick a Password'),
+                  obscureText: true,
                 ),
               ),
             ],
@@ -274,7 +274,9 @@ class FF_signUp extends StatelessWidget {
                 child: TextField(
                   // controller: passController,
                   enabled: true,
-                  decoration: InputDecoration(hintText: 'Re-enter the Password'),
+                  decoration:
+                      InputDecoration(hintText: 'Re-enter the Password'),
+                  obscureText: true,
                 ),
               ),
             ],

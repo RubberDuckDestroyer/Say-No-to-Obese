@@ -58,7 +58,6 @@ class FF_heightAndWeight extends StatelessWidget {
             ),
           ),
 
-
           SizedBox(
             width: 287.0,
             height: 41.0,
@@ -90,18 +89,17 @@ class FF_heightAndWeight extends StatelessWidget {
                 width: 90.0,
                 height: 47.0,
                 child: TextField(
-                  enabled: true,
-                  decoration: InputDecoration(hintText: ' kg'),
-                  textAlign: TextAlign.center,
-                  
-                ),
+                    enabled: true,
+                    decoration: InputDecoration(hintText: ' kg'),
+                    textAlign: TextAlign.center,
+                    keyboardType: TextInputType.number),
               ),
             ],
           ),
 
-        //-------------------------------------Height-------------------------------------------
+          //-------------------------------------Height-------------------------------------------
 
-        Transform.translate(
+          Transform.translate(
             offset: Offset(80.0, 120.0),
             child: SizedBox(
               width: 100.0,
@@ -119,7 +117,6 @@ class FF_heightAndWeight extends StatelessWidget {
               )),
             ),
           ),
-
 
           SizedBox(
             width: 287.0,
@@ -152,16 +149,13 @@ class FF_heightAndWeight extends StatelessWidget {
                 width: 90.0,
                 height: 47.0,
                 child: TextField(
-                  enabled: true,
-                  decoration: InputDecoration(hintText: ' cm'),
-                  textAlign: TextAlign.center,
-                  
-                  
-                ),
+                    enabled: true,
+                    decoration: InputDecoration(hintText: ' cm'),
+                    textAlign: TextAlign.center,
+                    keyboardType: TextInputType.number),
               ),
             ],
           ),
-
 
           //----------------------------Set your Goal-------------------------------
           Transform.translate(
@@ -193,16 +187,13 @@ class FF_heightAndWeight extends StatelessWidget {
                   width: 281,
                   height: 107,
                   child: RaisedButton(
-                    onPressed: () {
+                    onPressed: () {},
+                    // color: pressAttention ? Colors.grey : Colors.blue,
+                    // onPressed: () => SetState(() => pressAttention = !pressAttention),
 
-                    },
                     // color: pressAttention ? Colors.grey : Colors.blue,
-                    // onPressed: () => SetState(() => pressAttention = !pressAttention), 
-                 
-                  
-                    // color: pressAttention ? Colors.grey : Colors.blue,
-                    // onPressed: () => SetState(() => pressAttention = !pressAttention), 
-                 
+                    // onPressed: () => SetState(() => pressAttention = !pressAttention),
+
                     color: const Color(0xff2980b9),
                     child: Text(
                       'Gain Muscle',
@@ -220,7 +211,7 @@ class FF_heightAndWeight extends StatelessWidget {
 
           //--------------------------------Lose Fat---------------------------------
 
-           Stack(
+          Stack(
             children: [
               Positioned(
                   top: 470,
@@ -228,9 +219,7 @@ class FF_heightAndWeight extends StatelessWidget {
                   width: 281,
                   height: 107,
                   child: FlatButton(
-                    onPressed: () {
-                      
-                    },
+                    onPressed: () {},
                     color: const Color(0xff2980b9),
                     child: Text(
                       'Lose Fat',
@@ -245,7 +234,6 @@ class FF_heightAndWeight extends StatelessWidget {
                   ))
             ],
           ),
-
 
           //------------------------------------Page Link--------------------------------
 
@@ -363,7 +351,6 @@ class FF_heightAndWeight extends StatelessWidget {
         ],
       ),
     );
-  
   }
 }
 

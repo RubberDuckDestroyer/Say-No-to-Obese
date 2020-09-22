@@ -321,6 +321,7 @@ class FF_logIn extends StatelessWidget {
                   controller: passController,
                   enabled: true,
                   decoration: InputDecoration(hintText: 'Password'),
+                  obscureText: true,
                 ),
               ),
             ],
