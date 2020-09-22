@@ -188,19 +188,13 @@ class FF_heightAndWeight extends StatelessWidget {
                   height: 107,
                   child: RaisedButton(
                     onPressed: () {},
-                    // color: pressAttention ? Colors.grey : Colors.blue,
-                    // onPressed: () => SetState(() => pressAttention = !pressAttention),
-
-                    // color: pressAttention ? Colors.grey : Colors.blue,
-                    // onPressed: () => SetState(() => pressAttention = !pressAttention),
-
-                    color: const Color(0xff2980b9),
+                    color: Colors.white,
                     child: Text(
                       'Gain Muscle',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
                         fontSize: 20,
-                        color: const Color(0xffffffff),
+                        color: Colors.black,
                         fontWeight: FontWeight.w900,
                       ),
                       textAlign: TextAlign.center,
@@ -220,13 +214,13 @@ class FF_heightAndWeight extends StatelessWidget {
                   height: 107,
                   child: FlatButton(
                     onPressed: () {},
-                    color: const Color(0xff2980b9),
+                    color: Colors.blue,
                     child: Text(
                       'Lose Fat',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
                         fontSize: 20,
-                        color: const Color(0xffffffff),
+                        color: Colors.black,
                         fontWeight: FontWeight.w900,
                       ),
                       textAlign: TextAlign.center,
