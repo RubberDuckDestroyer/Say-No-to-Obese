@@ -181,8 +181,8 @@ class FF_logIn extends StatelessWidget {
                   height: 40,
                   child: FlatButton(
                     onPressed: () async {
-                      final email = nameController.value.toString();
-                      final password = passController.value.toString();
+                      final email = nameController.text.toString();
+                      final password = passController.text.toString();
                       final connect = await conn.connect(uri);
                       if (connect) {
                         print(connect);
@@ -198,8 +198,8 @@ class FF_logIn extends StatelessWidget {
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                title: const Text('Thanks!'),
-                                content: Text('You typed "$email".'),
+                                title: const Text('ERROR'),
+                                content: Text('Invalid email or password'),
                                 actions: <Widget>[
                                   FlatButton(
                                     onPressed: () {
