@@ -190,7 +190,6 @@ class FF_signUp extends StatelessWidget {
                 width: 258.0,
                 height: 47.0,
                 child: TextField(
-                  // controller: nameController,
                   enabled: true,
                   decoration:
                       InputDecoration(hintText: 'Enter your Email Address'),
@@ -240,7 +239,7 @@ class FF_signUp extends StatelessWidget {
               ),
             ],
           ),
-
+//------------------------------------------------------re-enter password----------------------------------------------
           SizedBox(
             width: 287.0,
             height: 41.0,

@@ -1,6 +1,7 @@
 import 'dart:ffi';
 import 'package:fitness_freaks/FF_dashboard.dart';
 import 'package:fitness_freaks/FF_heightAndWeight.dart';
+import 'package:fitness_freaks/FF_resetPassword.dart';
 import 'package:fitness_freaks/FF_signUp.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -84,11 +85,39 @@ class FF_logIn extends StatelessWidget {
                     ),
                   ),
                 ),
-                // ----------------------------------------------Rounded buttons Styling-----------------------------------------------
+                // ----------------------------------------------Sign up button-----------------------------------------------
               ],
             ),
           ),
 
+          Stack(
+            children: [
+              Positioned(
+                  top: 410,
+                  left: 90,
+                  width: 240,
+                  height: 40,
+                  child: FlatButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => FF_signUp()));
+                    },
+                    color: const Color(0xff27ae60),
+                    child: const Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 17,
+                        color: const Color(0xffffffff),
+                        fontWeight: FontWeight.w900,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ))
+            ],
+          ),
           SizedBox(
             width: 287.0,
             height: 41.0,
@@ -142,11 +171,67 @@ class FF_logIn extends StatelessWidget {
               ],
             ),
           ),
-          //--------------------------------------------------------------------Sign up button -------------------------------------------------------------
+          //--------------------------------------------------------------------Forgot Password -------------------------------------------------------------
+          
+          SizedBox(
+            width: 285.0,
+            height: 41.0,
+            child: Stack(
+              children: <Widget>[
+                Pinned.fromSize(
+                  bounds: Rect.fromLTWH(75.0, 510.0, 275.0, 41.0),
+                  size: Size(285.0, 41.0),
+                  pinLeft: true,
+                  pinRight: true,
+                  pinTop: true,
+                  pinBottom: true,
+                  child: Stack(
+                    children: <Widget>[
+                      Pinned.fromSize(
+                        bounds: Rect.fromLTWH(.0, 0.0, 285.0, 41.0),
+                        size: Size(285.0, 41.0),
+                        pinLeft: true,
+                        pinRight: true,
+                        pinTop: true,
+                        pinBottom: true,
+                        child: Stack(
+                          children: <Widget>[
+                            Pinned.fromSize(
+                              bounds: Rect.fromLTWH(0.0, 0.0, 285.0, 41.0),
+                              size: Size(285.0, 41.0),
+                              pinLeft: true,
+                              pinRight: true,
+                              pinTop: true,
+                              pinBottom: true,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(21.0),
+                                  color: const Color(0xffcf6464),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: const Color(0x29000000),
+                                      offset: Offset(0, 11),
+                                      blurRadius: 6,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                
+              ],
+            ),
+          ),
+
           Stack(
             children: [
               Positioned(
-                  top: 410,
+                  top: 510,
                   left: 90,
                   width: 240,
                   height: 40,
@@ -155,11 +240,11 @@ class FF_logIn extends StatelessWidget {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => FF_signUp()));
+                              builder: (context) => FF_resetPassword()));
                     },
-                    color: const Color(0xff27ae60),
+                    color: const Color(0xffcf6464),
                     child: const Text(
-                      "Sign Up",
+                      "Forgot Password",
                       style: TextStyle(
                         fontFamily: 'Montserrat',
                         fontSize: 17,
@@ -171,6 +256,9 @@ class FF_logIn extends StatelessWidget {
                   ))
             ],
           ),
+
+
+
           //--------------------------------------------------------------------Log in button -------------------------------------------------------------
           Stack(
             children: [
@@ -245,6 +333,8 @@ class FF_logIn extends StatelessWidget {
                   ))
             ],
           ),
+
+          
           //------------------------------------------------------Username box and text input--------------------------------------------------------
           SizedBox(
             width: 287.0,
@@ -382,77 +472,7 @@ class FF_logIn extends StatelessWidget {
           ),
 
           //--------------------------------------------------------------------Forgot my password -------------------------------------------------------------
-          SizedBox(
-            width: 285.0,
-            height: 41.0,
-            child: Stack(
-              children: <Widget>[
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(75.0, 500.0, 275.0, 41.0),
-                  size: Size(285.0, 41.0),
-                  pinLeft: true,
-                  pinRight: true,
-                  pinTop: true,
-                  pinBottom: true,
-                  child: Stack(
-                    children: <Widget>[
-                      Pinned.fromSize(
-                        bounds: Rect.fromLTWH(.0, 0.0, 285.0, 41.0),
-                        size: Size(285.0, 41.0),
-                        pinLeft: true,
-                        pinRight: true,
-                        pinTop: true,
-                        pinBottom: true,
-                        child: Stack(
-                          children: <Widget>[
-                            Pinned.fromSize(
-                              bounds: Rect.fromLTWH(0.0, 0.0, 285.0, 41.0),
-                              size: Size(285.0, 41.0),
-                              pinLeft: true,
-                              pinRight: true,
-                              pinTop: true,
-                              pinBottom: true,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(21.0),
-                                  color: const Color(0xffcf6464),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: const Color(0x29000000),
-                                      offset: Offset(0, 11),
-                                      blurRadius: 6,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(110.0, 510.0, 196.0, 21.0),
-                  size: Size(285.0, 41.0),
-                  pinLeft: true,
-                  pinRight: true,
-                  pinTop: true,
-                  pinBottom: true,
-                  child: Text(
-                    'Forgot my password',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 17,
-                      color: const Color(0xffffffff),
-                      fontWeight: FontWeight.w900,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          
         ],
       ),
     );
