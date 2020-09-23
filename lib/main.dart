@@ -1,3 +1,4 @@
+import 'package:fitness_freaks/FF_dietPreferences.dart';
 import 'package:fitness_freaks/FF_resetPassword.dart';
 import 'package:flutter/material.dart';
 import 'controllers/loginController.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: FF_logIn(),
+      // home: FF_logIn(),
+      home: FF_dietPreferences(),
       // home: FF_resetPassword(),
     );
   }

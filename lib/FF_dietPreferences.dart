@@ -122,6 +122,89 @@ class FF_dietPreferences extends StatelessWidget {
             ),
           ),
 
+          SizedBox(
+            width: 285.0,
+            height: 41.0,
+            child: Stack(
+              children: <Widget>[
+                Pinned.fromSize(
+                  bounds: Rect.fromLTWH(75.0, 590.0, 275.0, 41.0),
+                  size: Size(285.0, 41.0),
+                  pinLeft: true,
+                  pinRight: true,
+                  pinTop: true,
+                  pinBottom: true,
+                  child: Stack(
+                    children: <Widget>[
+                      Pinned.fromSize(
+                        bounds: Rect.fromLTWH(.0, 0.0, 285.0, 41.0),
+                        size: Size(285.0, 41.0),
+                        pinLeft: true,
+                        pinRight: true,
+                        pinTop: true,
+                        pinBottom: true,
+                        child: Stack(
+                          children: <Widget>[
+                            Pinned.fromSize(
+                              bounds: Rect.fromLTWH(0.0, 0.0, 285.0, 41.0),
+                              size: Size(285.0, 41.0),
+                              pinLeft: true,
+                              pinRight: true,
+                              pinTop: true,
+                              pinBottom: true,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(21.0),
+                                  color: const Color(0xffcf6464),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: const Color(0x29000000),
+                                      offset: Offset(0, 11),
+                                      blurRadius: 6,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                
+              ],
+            ),
+          ),
+
+          Stack(
+            children: [
+              Positioned(
+                  top: 590,
+                  left: 90,
+                  width: 240,
+                  height: 40,
+                  child: FlatButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => FF_dashboard()));
+                    },
+                    color: const Color(0xffcf6464),
+                    child: const Text(
+                      "Continue",
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 17,
+                        color: const Color(0xffffffff),
+                        fontWeight: FontWeight.w900,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ))
+            ],
+          ),
         //------------------------------------------------------Meal Option labels-------------------------------------------
 
         Transform.translate(
