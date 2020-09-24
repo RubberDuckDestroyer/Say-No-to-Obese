@@ -6,6 +6,8 @@ import 'package:fitness_freaks/FF_signUp.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:fitness_freaks/controllers/loginController.dart';
+import 'widgets/TextPopup.dart';
+import 'styles/TitleText.dart';
 
 class FF_logIn extends StatelessWidget {
   TextEditingController nameController = TextEditingController();
@@ -39,19 +41,7 @@ class FF_logIn extends StatelessWidget {
                   pinBottom: true,
                   child: Text(
                     'FITNESS \n          FREAK',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 41,
-                      color: const Color(0xffffffff),
-                      fontWeight: FontWeight.w900,
-                      shadows: [
-                        Shadow(
-                          color: const Color(0x29000000),
-                          offset: Offset(0, 13),
-                          blurRadius: 6,
-                        )
-                      ],
-                    ),
+                    style: titleText,
                     textAlign: TextAlign.left,
                   ),
                 ),
@@ -172,7 +162,7 @@ class FF_logIn extends StatelessWidget {
             ),
           ),
           //--------------------------------------------------------------------Forgot Password -------------------------------------------------------------
-          
+
           SizedBox(
             width: 285.0,
             height: 41.0,
@@ -223,7 +213,6 @@ class FF_logIn extends StatelessWidget {
                     ],
                   ),
                 ),
-                
               ],
             ),
           ),
@@ -257,8 +246,6 @@ class FF_logIn extends StatelessWidget {
             ],
           ),
 
-
-
           //--------------------------------------------------------------------Log in button -------------------------------------------------------------
           Stack(
             children: [
@@ -285,17 +272,10 @@ class FF_logIn extends StatelessWidget {
                           await showDialog<void>(
                             context: context,
                             builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: const Text('ERROR'),
-                                content: Text('Invalid email or password'),
-                                actions: <Widget>[
-                                  FlatButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: const Text('OK'),
-                                  ),
-                                ],
+                              return TextPopup(
+                                context: context,
+                                title: "ERROR",
+                                description: "Invalid email or password :(",
                               );
                             },
                           );
@@ -334,7 +314,6 @@ class FF_logIn extends StatelessWidget {
             ],
           ),
 
-          
           //------------------------------------------------------Username box and text input--------------------------------------------------------
           SizedBox(
             width: 287.0,
@@ -472,7 +451,6 @@ class FF_logIn extends StatelessWidget {
           ),
 
           //--------------------------------------------------------------------Forgot my password -------------------------------------------------------------
-          
         ],
       ),
     );

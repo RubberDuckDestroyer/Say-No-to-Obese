@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // home: FF_logIn(),
-      home: FF_dietPreferences(),
+      home: FF_logIn(),
       // home: FF_resetPassword(),
     );
   }
