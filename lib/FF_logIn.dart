@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:fitness_freaks/controllers/loginController.dart';
 import 'widgets/TextPopup.dart';
+import 'styles/TitleText.dart';
 
 class FF_logIn extends StatelessWidget {
   TextEditingController nameController = TextEditingController();
@@ -40,19 +41,7 @@ class FF_logIn extends StatelessWidget {
                   pinBottom: true,
                   child: Text(
                     'FITNESS \n          FREAK',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 41,
-                      color: const Color(0xffffffff),
-                      fontWeight: FontWeight.w900,
-                      shadows: [
-                        Shadow(
-                          color: const Color(0x29000000),
-                          offset: Offset(0, 13),
-                          blurRadius: 6,
-                        )
-                      ],
-                    ),
+                    style: titleText,
                     textAlign: TextAlign.left,
                   ),
                 ),
