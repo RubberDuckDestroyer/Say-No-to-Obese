@@ -3,6 +3,7 @@ import 'package:adobe_xd/pinned.dart';
 import './FF_dashboard.dart';
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fitness_freaks/styles/NormalWhiteText.dart';
 
 class FF_dietPreferences extends StatelessWidget {
   FF_dietPreferences({
@@ -38,7 +39,7 @@ class FF_dietPreferences extends StatelessWidget {
             ),
           ),
 
-        //-----------------------------------------------------Weight--------------------------------------------------
+        //-----------------------------------------------------Weight-------------------------------------------------
 
         Transform.translate(
             offset: Offset(120.0, 108.0),
@@ -48,12 +49,7 @@ class FF_dietPreferences extends StatelessWidget {
               child: SingleChildScrollView(
                   child: Text(
                 'Weight: \n',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 23,
-                  color: const Color(0xffffffff),
-                  fontWeight: FontWeight.w400,
-                ),
+                style: smallText,
                 textAlign: TextAlign.left,
               )),
             ),

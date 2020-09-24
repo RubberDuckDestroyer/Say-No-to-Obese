@@ -3,6 +3,7 @@ import 'package:adobe_xd/pinned.dart';
 import './FF_dietPreferences.dart';
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fitness_freaks/styles/NormalWhiteText.dart';
 
 import 'FF_dashboard.dart';
 
@@ -47,12 +48,7 @@ class FF_heightAndWeight extends StatelessWidget {
               child: SingleChildScrollView(
                   child: Text(
                 'Weight: \n',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 23,
-                  color: const Color(0xffffffff),
-                  fontWeight: FontWeight.w400,
-                ),
+                style: smallText,
                 textAlign: TextAlign.left,
               )),
             ),
@@ -107,12 +103,7 @@ class FF_heightAndWeight extends StatelessWidget {
               child: SingleChildScrollView(
                   child: Text(
                 'Height: \n',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 23,
-                  color: const Color(0xffffffff),
-                  fontWeight: FontWeight.w400,
-                ),
+                style: smallText,
                 textAlign: TextAlign.left,
               )),
             ),
