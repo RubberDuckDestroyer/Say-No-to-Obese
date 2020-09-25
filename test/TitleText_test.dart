@@ -3,8 +3,7 @@ import 'package:fitness_freaks/styles/TitleText.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  testWidgets('TitleText has a text style element.',
-      (WidgetTester tester) async {
+  testWidgets('TitleText has a font size of 41.', (WidgetTester tester) async {
     // Create widget using pumpWidget
     await tester.pumpWidget(Builder(builder: (BuildContext context) {
       return (MaterialApp(
@@ -16,6 +15,6 @@ void main() {
 
     Text textWid = tester.firstWidget(find.byType(Text));
 
-    expect(textWid.style, titleText);
+    expect(textWid.style.fontSize, 41);
   });
 }
