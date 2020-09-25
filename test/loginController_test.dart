@@ -50,6 +50,6 @@ void main() {
     var controller = LoginController();
     await controller.connect(uri);
     final res = await controller.login("tEst@thisISATESt.com   ", "fitness");
-    expect(res, equals(false));
+    expect(res, equals(true));
   });
 }

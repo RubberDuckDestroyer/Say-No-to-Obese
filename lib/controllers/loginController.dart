@@ -40,6 +40,7 @@ class LoginController {
 
   Future<bool> login(String email, String pass) async {
     try {
+      email = email.trim().toLowerCase();
       final users = this._db.collection("users");
       final res = await users.findOne(where.eq("email", email));
       if (res.length > 0) {
