@@ -5,17 +5,24 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fitness_freaks/styles/NormalWhiteText.dart';
 
-class FF_dietPreferences extends StatelessWidget {
-  FF_dietPreferences({
-    Key key,
-  }) : super(key: key);
+class FF_dietPreferences extends StatefulWidget {
+  @override
+  _dietPreferencesstate createState() => new _dietPreferencesstate();
+}
+
+class _dietPreferencesstate extends State<FF_dietPreferences> {
+  bool veganChecked = false;
+  bool vegeChecked = false;
+  bool dairyChecked = false;
+  bool glutenChecked = false;
+  bool otherChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff343a5e),
       body: Stack(
         children: <Widget>[
-
           //---------------------------------------------------Header-------------------------------------------------
           Transform.translate(
             offset: Offset(43.2, 39.7),
@@ -39,9 +46,9 @@ class FF_dietPreferences extends StatelessWidget {
             ),
           ),
 
-        //-----------------------------------------------------Weight-------------------------------------------------
+          //-----------------------------------------------------Weight-------------------------------------------------
 
-        Transform.translate(
+          Transform.translate(
             offset: Offset(120.0, 108.0),
             child: SizedBox(
               width: 100.0,
@@ -94,9 +101,9 @@ class FF_dietPreferences extends StatelessWidget {
             ],
           ),
 
-        //------------------------------------------------------Header #2----------------------------------------------
+          //------------------------------------------------------Header #2----------------------------------------------
 
-        Transform.translate(
+          Transform.translate(
             offset: Offset(59.0, 183.3),
             child: Transform.rotate(
               angle: 0.0,
@@ -168,7 +175,6 @@ class FF_dietPreferences extends StatelessWidget {
                     ],
                   ),
                 ),
-                
               ],
             ),
           ),
@@ -201,9 +207,9 @@ class FF_dietPreferences extends StatelessWidget {
                   ))
             ],
           ),
-        //------------------------------------------------------Meal Option labels-------------------------------------------
+          //------------------------------------------------------Meal Option labels-------------------------------------------
 
-        Transform.translate(
+          Transform.translate(
             offset: Offset(122.0, 259.0),
             child: SizedBox(
               width: 168.0,
@@ -211,302 +217,201 @@ class FF_dietPreferences extends StatelessWidget {
               child: Stack(
                 children: <Widget>[
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 74.0, 18.0),
-                    size: Size(168.0, 234.0),
-                    pinLeft: true,
-                    pinTop: true,
-                    fixedWidth: true,
-                    fixedHeight: true,
-                    child: Text(
-                      'Vegetarian',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 14,
-                        color: const Color(0xffffffff),
-                        fontWeight: FontWeight.w200,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 54.0, 44.0, 18.0),
-                    size: Size(168.0, 234.0),
-                    pinLeft: true,
-                    fixedWidth: true,
-                    fixedHeight: true,
-                    child: Text(
-                      'Vegan',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 14,
-                        color: const Color(0xffffffff),
-                        fontWeight: FontWeight.w200,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 108.0, 80.0, 18.0),
-                    size: Size(168.0, 234.0),
-                    pinLeft: true,
-                    fixedWidth: true,
-                    fixedHeight: true,
-                    child: Text(
-                      'Gluten Free',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 14,
-                        color: const Color(0xffffffff),
-                        fontWeight: FontWeight.w200,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 162.0, 70.0, 18.0),
-                    size: Size(168.0, 234.0),
-                    pinLeft: true,
-                    fixedWidth: true,
-                    fixedHeight: true,
-                    child: Text(
-                      'Dairy Free',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 14,
-                        color: const Color(0xffffffff),
-                        fontWeight: FontWeight.w200,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 216.0, 40.0, 18.0),
-                    size: Size(168.0, 234.0),
-                    pinLeft: true,
-                    pinBottom: true,
-                    fixedWidth: true,
-                    fixedHeight: true,
-                    child: Text(
-                      'Other',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 14,
-                        color: const Color(0xffffffff),
-                        fontWeight: FontWeight.w200,
-                      ),
-                      textAlign: TextAlign.center,
+                    bounds: Rect.fromLTWH(0, 0, 110, 20),
+                    size: Size(100, 100),
+                    child: CheckboxListTile(
+                      title:
+                          Text("Vegan", style: TextStyle(color: Colors.white)),
+                      controlAffinity: ListTileControlAffinity.trailing,
+                      value: veganChecked,
+                      onChanged: (bool value) {
+                        setState(() {
+                          veganChecked = value;
+                        });
+                      },
                     ),
                   ),
 
-        //----------------------------------------Checkboxes------------------------------------------------
-          Transform.translate(
-            offset: Offset(47.0, 595.0),
-            child: Container(
-              width: 318.0,
-              height: 96.0,
-              decoration: BoxDecoration(),
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(47.0, 641.0),
-            child: PageLink(
-              links: [
-                PageLinkInfo(
-                  transition: LinkTransition.Fade,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () => FF_dashboard(),
-                ),
-              ],
-              child: SizedBox(
-                width: 321.0,
-                height: 38.0,
-                child: Stack(
-                  children: <Widget>[
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(0.0, 0.0, 321.0, 38.0),
-                      size: Size(321.0, 38.0),
-                      pinLeft: true,
-                      pinRight: true,
-                      pinTop: true,
-                      pinBottom: true,
-                      child: Stack(
-                        children: <Widget>[
-                          Pinned.fromSize(
-                            bounds: Rect.fromLTWH(0.0, 0.0, 321.0, 38.0),
-                            size: Size(321.0, 38.0),
-                            pinLeft: true,
-                            pinRight: true,
-                            pinTop: true,
-                            pinBottom: true,
-                            child: Stack(
-                              children: <Widget>[
-                                Pinned.fromSize(
-                                  bounds: Rect.fromLTWH(0.0, 0.0, 321.0, 38.0),
-                                  size: Size(321.0, 38.0),
-                                  pinLeft: true,
-                                  pinRight: true,
-                                  pinTop: true,
-                                  pinBottom: true,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(21.0),
-                                      color: const Color(0xffcf6464),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: const Color(0x29000000),
-                                          offset: Offset(0, 11),
-                                          blurRadius: 6,
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0, 20, 110, 20),
+                    size: Size(100, 100),
+                    child: CheckboxListTile(
+                      title: Text("Vegatarian",
+                          style: TextStyle(color: Colors.white)),
+                      controlAffinity: ListTileControlAffinity.trailing,
+                      value: vegeChecked,
+                      onChanged: (bool value) {
+                        setState(() {
+                          vegeChecked = value;
+                        });
+                      },
+                    ),
+                  ),
+
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0, 40, 110, 20),
+                    size: Size(100, 100),
+                    child: CheckboxListTile(
+                      title: Text("Gluten Free",
+                          style: TextStyle(color: Colors.white)),
+                      controlAffinity: ListTileControlAffinity.trailing,
+                      value: glutenChecked,
+                      onChanged: (bool value) {
+                        setState(() {
+                          glutenChecked = value;
+                        });
+                      },
+                    ),
+                  ),
+
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0, 60, 110, 20),
+                    size: Size(100, 100),
+                    child: CheckboxListTile(
+                      title: Text("Dairy Free",
+                          style: TextStyle(color: Colors.white)),
+                      controlAffinity: ListTileControlAffinity.trailing,
+                      value: dairyChecked,
+                      onChanged: (bool value) {
+                        setState(() {
+                          dairyChecked = value;
+                        });
+                      },
+                    ),
+                  ),
+
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0, 80, 110, 20),
+                    size: Size(100, 100),
+                    child: CheckboxListTile(
+                      title:
+                          Text("Other", style: TextStyle(color: Colors.white)),
+                      controlAffinity: ListTileControlAffinity.trailing,
+                      value: otherChecked,
+                      onChanged: (bool value) {
+                        setState(() {
+                          otherChecked = value;
+                        });
+                      },
+                    ),
+                  ),
+
+                  //----------------------------------------Checkboxes------------------------------------------------
+                  Transform.translate(
+                    offset: Offset(47.0, 595.0),
+                    child: Container(
+                      width: 318.0,
+                      height: 96.0,
+                      decoration: BoxDecoration(),
+                    ),
+                  ),
+                  Transform.translate(
+                    offset: Offset(47.0, 641.0),
+                    child: PageLink(
+                      links: [
+                        PageLinkInfo(
+                          transition: LinkTransition.Fade,
+                          ease: Curves.easeOut,
+                          duration: 0.3,
+                          pageBuilder: () => FF_dashboard(),
+                        ),
+                      ],
+                      child: SizedBox(
+                        width: 321.0,
+                        height: 38.0,
+                        child: Stack(
+                          children: <Widget>[
+                            Pinned.fromSize(
+                              bounds: Rect.fromLTWH(0.0, 0.0, 321.0, 38.0),
+                              size: Size(321.0, 38.0),
+                              pinLeft: true,
+                              pinRight: true,
+                              pinTop: true,
+                              pinBottom: true,
+                              child: Stack(
+                                children: <Widget>[
+                                  Pinned.fromSize(
+                                    bounds:
+                                        Rect.fromLTWH(0.0, 0.0, 321.0, 38.0),
+                                    size: Size(321.0, 38.0),
+                                    pinLeft: true,
+                                    pinRight: true,
+                                    pinTop: true,
+                                    pinBottom: true,
+                                    child: Stack(
+                                      children: <Widget>[
+                                        Pinned.fromSize(
+                                          bounds: Rect.fromLTWH(
+                                              0.0, 0.0, 321.0, 38.0),
+                                          size: Size(321.0, 38.0),
+                                          pinLeft: true,
+                                          pinRight: true,
+                                          pinTop: true,
+                                          pinBottom: true,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(21.0),
+                                              color: const Color(0xffcf6464),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color:
+                                                      const Color(0x29000000),
+                                                  offset: Offset(0, 11),
+                                                  blurRadius: 6,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                         ),
                                       ],
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
 
-                    //--------------------------------------Continue button----------------------------------------------
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(51.0, 600.0, 220.0, 19.0),
-                      size: Size(321.0, 38.0),
-                      pinLeft: true,
-                      pinRight: true,
-                      fixedHeight: true,
-                      child: SingleChildScrollView(
-                          child: Text(
-                        'CONTINUE',
-                        style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontSize: 17,
-                          color: const Color(0xffffffff),
-                          fontWeight: FontWeight.w900,
+                            //--------------------------------------Continue button----------------------------------------------
+                            Pinned.fromSize(
+                              bounds: Rect.fromLTWH(51.0, 600.0, 220.0, 19.0),
+                              size: Size(321.0, 38.0),
+                              pinLeft: true,
+                              pinRight: true,
+                              fixedHeight: true,
+                              child: SingleChildScrollView(
+                                  child: Text(
+                                'CONTINUE',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontSize: 17,
+                                  color: const Color(0xffffffff),
+                                  fontWeight: FontWeight.w900,
+                                ),
+                                textAlign: TextAlign.center,
+                              )),
+                            ),
+                            Pinned.fromSize(
+                              bounds: Rect.fromLTWH(45.0, 600.0, 196.0, 21.0),
+                              size: Size(285.0, 42.0),
+                              pinLeft: true,
+                              pinRight: true,
+                              fixedHeight: true,
+                              child: Text(
+                                'CONTINUE',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontSize: 17,
+                                  color: const Color(0xffffffff),
+                                  fontWeight: FontWeight.w900,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ],
                         ),
-                        textAlign: TextAlign.center,
-                      )),
-                    ),
-                     Pinned.fromSize(
-                      bounds: Rect.fromLTWH(45.0, 600.0, 196.0, 21.0),
-                      size: Size(285.0, 42.0),
-                      pinLeft: true,
-                      pinRight: true,
-                      fixedHeight: true,
-                      child: Text(
-                        'CONTINUE',
-                        style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontSize: 17,
-                          color: const Color(0xffffffff),
-                          fontWeight: FontWeight.w900,
-                        ),
-                        textAlign: TextAlign.center,
                       ),
                     ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          
-          
-                  // Pinned.fromSize(
-                  //   bounds: Rect.fromLTWH(149.0, 1.0, 19.0, 16.0),
-                  //   size: Size(168.0, 234.0),
-                  //   pinRight: true,
-                  //   pinTop: true,
-                  //   fixedWidth: true,
-                  //   fixedHeight: true,
-                  //   child: Container(
-                  //     decoration: BoxDecoration(
-                  //       borderRadius: BorderRadius.circular(3.0),
-                  //       color: const Color(0xffffffff),
-                  //     ),
-                  //   ),
-                  // ),
-                  // Pinned.fromSize(
-                  //   bounds: Rect.fromLTWH(149.0, 56.0, 19.0, 15.0),
-                  //   size: Size(168.0, 234.0),
-                  //   pinRight: true,
-                  //   fixedWidth: true,
-                  //   fixedHeight: true,
-                  //   child: Container(
-                  //     decoration: BoxDecoration(
-                  //       borderRadius: BorderRadius.circular(3.0),
-                  //       color: const Color(0xffffffff),
-                  //     ),
-                  //   ),
-                  // ),
-                  // Pinned.fromSize(
-                  //   bounds: Rect.fromLTWH(149.0, 110.0, 19.0, 15.0),
-                  //   size: Size(168.0, 234.0),
-                  //   pinRight: true,
-                  //   fixedWidth: true,
-                  //   fixedHeight: true,
-                  //   child: Container(
-                  //     decoration: BoxDecoration(
-                  //       borderRadius: BorderRadius.circular(3.0),
-                  //       color: const Color(0xffffffff),
-                  //     ),
-                  //   ),
-                  // ),
-                  // Pinned.fromSize(
-                  //   bounds: Rect.fromLTWH(149.0, 164.0, 19.0, 15.0),
-                  //   size: Size(168.0, 234.0),
-                  //   pinRight: true,
-                  //   fixedWidth: true,
-                  //   fixedHeight: true,
-                  //   child: Container(
-                  //     decoration: BoxDecoration(
-                  //       borderRadius: BorderRadius.circular(3.0),
-                  //       color: const Color(0xffffffff),
-                  //     ),
-                  //   ),
-                  // ),
-                  // Pinned.fromSize(
-                  //   bounds: Rect.fromLTWH(151.0, 3.0, 15.0, 12.0),
-                  //   size: Size(168.0, 234.0),
-                  //   pinRight: true,
-                  //   pinTop: true,
-                  //   fixedWidth: true,
-                  //   fixedHeight: true,
-                  //   child: Container(
-                  //     decoration: BoxDecoration(
-                  //       borderRadius: BorderRadius.circular(3.0),
-                  //       color: const Color(0xff373333),
-                  //     ),
-                  //   ),
-                  // ),
-                  // Pinned.fromSize(
-                  //   bounds: Rect.fromLTWH(151.0, 166.0, 15.0, 12.0),
-                  //   size: Size(168.0, 234.0),
-                  //   pinRight: true,
-                  //   fixedWidth: true,
-                  //   fixedHeight: true,
-                  //   child: Container(
-                  //     decoration: BoxDecoration(
-                  //       borderRadius: BorderRadius.circular(3.0),
-                  //       color: const Color(0xff373333),
-                  //     ),
-                  //   ),
-                  // ),
-                  
-                  // Pinned.fromSize(
-                  //   bounds: Rect.fromLTWH(149.0, 216.0, 19.0, 16.0),
-                  //   size: Size(168.0, 234.0),
-                  //   pinRight: true,
-                  //   pinBottom: true,
-                  //   fixedWidth: true,
-                  //   fixedHeight: true,
-                  //   child: Container(
-                  //     decoration: BoxDecoration(
-                  //       borderRadius: BorderRadius.circular(3.0),
-                  //       color: const Color(0xffffffff),
-                  //     ),
-                  //   ),
-                  // ),
+                  ),
                 ],
               ),
             ),
