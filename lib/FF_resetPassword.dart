@@ -1,17 +1,18 @@
 import 'dart:ffi';
 import 'package:fitness_freaks/FF_dashboard.dart';
 import 'package:fitness_freaks/FF_heightAndWeight.dart';
+import 'package:fitness_freaks/widgets/TextPopup.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:fitness_freaks/controllers/loginController.dart';
 
 class FF_resetPassword extends StatelessWidget {
-  // TextEditingController nameController = TextEditingController();
-  // TextEditingController passController = TextEditingController();
-  // LoginController conn = LoginController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passController = TextEditingController();
+  LoginController conn = LoginController();
 
-  // String uri =
-  //     "mongodb+srv://fitnessfreaks:roW4x8esRB91viFi@cluster0.bqckt.mongodb.net/main?retryWrites=true&w=majority";
+  String uri =
+      "mongodb+srv://fitnessfreaks:roW4x8esRB91viFi@cluster0.bqckt.mongodb.net/main?retryWrites=true&w=majority";
 
   FF_resetPassword({
     Key key,
@@ -130,12 +131,69 @@ class FF_resetPassword extends StatelessWidget {
                   left: 90,
                   width: 240,
                   height: 40,
-                  child: FlatButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => FF_heightAndWeight()));
+                  // child: FlatButton(
+                  //   onPressed: () {
+                  //     Navigator.push(
+                  //         context,
+                  //         new MaterialPageRoute(
+                  //             builder: (context) => FF_heightAndWeight()));
+                  //   },
+                  //   color: const Color(0xff27ae60),
+                  //   child: const Text(
+                  //     "Reset Password",
+                  //     style: TextStyle(
+                  //       fontFamily: 'Montserrat',
+                  //       fontSize: 20,
+                  //       color: const Color(0xffffffff),
+                  //       fontWeight: FontWeight.w900,
+                  //     ),
+                  //     textAlign: TextAlign.center,
+                  //   ),
+                  // ))
+              child: FlatButton(
+                    onPressed: () async {
+                      final email = nameController.text.toString();
+                      final password = passController.text.toString();
+                      final connect = await conn.connect(uri);
+                      if (connect) {
+                        print(connect);
+                        final isLoggedIn = await conn.login(email, password);
+                        print(isLoggedIn);
+                        if (isLoggedIn) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FF_dashboard()));
+                        } else {
+                          await showDialog<void>(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return TextPopup(
+                                context: context,
+                                title: "ERROR",
+                                description: "Invalid email or password :(",
+                              );
+                            },
+                          );
+                        }
+                      } else {
+                        await showDialog<void>(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: const Text('Thanks!'),
+                                content: Text('You typed "could not connect".'),
+                                actions: <Widget>[
+                                  FlatButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: const Text('OK'),
+                                  ),
+                                ],
+                              );
+                            });
+                      }
                     },
                     color: const Color(0xff27ae60),
                     child: const Text(
@@ -149,6 +207,7 @@ class FF_resetPassword extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ))
+            
             ],
           ),
 

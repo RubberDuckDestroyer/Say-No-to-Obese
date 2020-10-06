@@ -4,6 +4,7 @@ import 'package:fitness_freaks/FF_heightAndWeight.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:fitness_freaks/controllers/loginController.dart';
+import 'package:flutter/services.dart';
 
 class FF_signUp extends StatelessWidget {
   // TextEditingController nameController = TextEditingController();
@@ -153,6 +154,7 @@ class FF_signUp extends StatelessWidget {
                   // controller: nameController,
                   enabled: true,
                   decoration: InputDecoration(hintText: 'Enter your Full Name'),
+                  keyboardType: TextInputType.name,
                 ),
               ),
             ],
