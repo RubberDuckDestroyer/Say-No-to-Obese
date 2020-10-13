@@ -280,19 +280,7 @@ class Post3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
-      ),
+      decoration: BoxDecoration(),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -510,17 +498,11 @@ class Workout4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
+        image: const DecorationImage(
+          image: NetworkImage(
+              'https://www.thetrendspotter.net/wp-content/uploads/2020/04/Chest-Workout-Men.jpg'),
+          fit: BoxFit.cover,
+        ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
