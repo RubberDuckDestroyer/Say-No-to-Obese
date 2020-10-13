@@ -17,9 +17,7 @@ class FF_logIn extends StatelessWidget {
   String uri =
       "mongodb+srv://fitnessfreaks:roW4x8esRB91viFi@cluster0.bqckt.mongodb.net/main?retryWrites=true&w=majority";
 
-  FF_logIn({
-    Key key, this.conn
-  }) : super(key: key);
+  FF_logIn({Key key, this.conn}) : super(key: key);
   final LoginController conn;
   @override
   Widget build(BuildContext context) {
@@ -260,7 +258,7 @@ class FF_logIn extends StatelessWidget {
                     onPressed: () async {
                       final email = nameController.text.toString();
                       final password = passController.text.toString();
-                      final connect = await conn.connect(uri);
+                      final connect = conn.isConnected;
                       if (connect) {
                         print(connect);
                         final isLoggedIn = await conn.login(email, password);

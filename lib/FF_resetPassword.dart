@@ -153,7 +153,7 @@ class FF_resetPassword extends StatelessWidget {
                       final email = nameController.text.toString();
                       final password = passController.text.toString();
                       final connect = conn.getConnection().isConnected;
-                      print(connect);
+
                       if (connect) {
                         // Reset password if connected
                         final didReset =
@@ -247,7 +247,7 @@ class FF_resetPassword extends StatelessWidget {
                 width: 258.0,
                 height: 47.0,
                 child: TextField(
-                  // controller: nameController,
+                  controller: nameController,
                   enabled: true,
                   decoration:
                       InputDecoration(hintText: 'Enter your Email Address'),
@@ -289,7 +289,7 @@ class FF_resetPassword extends StatelessWidget {
                 width: 258.0,
                 height: 47.0,
                 child: TextField(
-                  // controller: passController,
+                  controller: passController,
                   enabled: true,
                   decoration: InputDecoration(hintText: 'Enter a new Password'),
                   obscureText: true,
