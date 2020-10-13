@@ -27,6 +27,7 @@ class LoginController {
       await this._db.open();
 
       print("Connected to db");
+      this.isConnected = true;
       return true;
     } catch (e) {
       print("There was an error while connecting to the database.");
@@ -60,6 +61,7 @@ class LoginController {
   }
 
   Future<bool> resetPassword(String email, String password) async {
+    print('resetting password');
     final result = await resetPasswordFor(this._db, email, password);
     return result;
   }

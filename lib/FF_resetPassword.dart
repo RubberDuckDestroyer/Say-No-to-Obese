@@ -1,11 +1,9 @@
 import 'dart:ffi';
-import 'package:fitness_freaks/FF_dashboard.dart';
-import 'package:fitness_freaks/FF_heightAndWeight.dart';
 import 'package:fitness_freaks/widgets/TextPopup.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:fitness_freaks/controllers/loginController.dart';
-import 'package:mongo_dart/mongo_dart.dart';
+// import 'package:mongo_dart/mongo_dart.dart';
 
 class FF_resetPassword extends StatelessWidget {
   TextEditingController nameController = TextEditingController();
@@ -154,7 +152,8 @@ class FF_resetPassword extends StatelessWidget {
                     onPressed: () async {
                       final email = nameController.text.toString();
                       final password = passController.text.toString();
-                      final connect = conn.isConnected;
+                      final connect = conn.getConnection().isConnected;
+                      print(connect);
                       if (connect) {
                         // Reset password if connected
                         final didReset =
