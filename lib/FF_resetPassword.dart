@@ -5,18 +5,18 @@ import 'package:fitness_freaks/widgets/TextPopup.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:fitness_freaks/controllers/loginController.dart';
+import 'package:mongo_dart/mongo_dart.dart';
 
 class FF_resetPassword extends StatelessWidget {
   TextEditingController nameController = TextEditingController();
   TextEditingController passController = TextEditingController();
-  LoginController conn = LoginController();
+  // LoginController conn = LoginController();
 
-  String uri =
-      "mongodb+srv://fitnessfreaks:roW4x8esRB91viFi@cluster0.bqckt.mongodb.net/main?retryWrites=true&w=majority";
+  FF_resetPassword({Key key, this.conn}) : super(key: key);
 
-  FF_resetPassword({
-    Key key,
-  }) : super(key: key);
+  // Define parameters required
+  final LoginController conn;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -150,49 +150,55 @@ class FF_resetPassword extends StatelessWidget {
                   //     textAlign: TextAlign.center,
                   //   ),
                   // ))
-              child: FlatButton(
+                  child: FlatButton(
                     onPressed: () async {
                       final email = nameController.text.toString();
                       final password = passController.text.toString();
-                      final connect = await conn.connect(uri);
+                      final connect = conn.isConnected;
                       if (connect) {
-                        print(connect);
-                        final isLoggedIn = await conn.login(email, password);
-                        print(isLoggedIn);
-                        if (isLoggedIn) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => FF_dashboard()));
+                        // Reset password if connected
+                        final didReset =
+                            await conn.resetPassword(email, password);
+                        if (didReset == true) {
+                          // Password reset successful
+                          await showDialog<void>(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return TextPopup(
+                                context: context,
+                                title: "Success!",
+                                description: "Your password has been reset!",
+                              );
+                            },
+                          );
+                          // Log user in and go to dashboard
                         } else {
+                          // Password reset unsuccessfull, show error
                           await showDialog<void>(
                             context: context,
                             builder: (BuildContext context) {
                               return TextPopup(
                                 context: context,
                                 title: "ERROR",
-                                description: "Invalid email or password :(",
+                                description: "Error connecting to database :(",
                               );
                             },
                           );
                         }
                       } else {
+                        // Show dialog for error
                         await showDialog<void>(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: const Text('Thanks!'),
-                                content: Text('You typed "could not connect".'),
-                                actions: <Widget>[
-                                  FlatButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: const Text('OK'),
-                                  ),
-                                ],
-                              );
-                            });
+                          context: context,
+                          builder: (BuildContext context) {
+                            return TextPopup(
+                              context: context,
+                              title: "ERROR",
+                              description: "Invalid email or password :(",
+                            );
+                          },
+                        );
+
+                        // Go back to main page
                       }
                     },
                     color: const Color(0xff27ae60),
@@ -207,10 +213,8 @@ class FF_resetPassword extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ))
-            
             ],
           ),
-
 
           //------------------------------------------------------Username box and text input--------------------------------------------------------
           SizedBox(

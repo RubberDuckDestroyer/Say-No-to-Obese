@@ -2,6 +2,8 @@
 ** This is a controller that handles all the login functionality 
 */
 import 'package:mongo_dart/mongo_dart.dart';
+import 'package:fitness_freaks/scripts/resetPassword.dart';
+
 // import 'package:dotenv/dotenv.dart' show load, env;
 
 class LoginController {
@@ -55,5 +57,10 @@ class LoginController {
       print("There was an error while logging in...");
     }
     return false;
+  }
+
+  Future<bool> resetPassword(String email, String password) async {
+    final result = await resetPasswordFor(this._db, email, password);
+    return result;
   }
 }
