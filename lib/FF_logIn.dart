@@ -229,7 +229,8 @@ class FF_logIn extends StatelessWidget {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => FF_resetPassword()));
+                              builder: (context) =>
+                                  FF_resetPassword(conn: this.conn)));
                     },
                     color: const Color(0xffcf6464),
                     child: const Text(
