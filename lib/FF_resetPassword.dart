@@ -1,4 +1,5 @@
 import 'dart:ffi';
+import 'package:fitness_freaks/FF_dashboard.dart';
 import 'package:fitness_freaks/widgets/TextPopup.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -129,27 +130,12 @@ class FF_resetPassword extends StatelessWidget {
                   left: 90,
                   width: 240,
                   height: 40,
-                  // child: FlatButton(
-                  //   onPressed: () {
-                  //     Navigator.push(
-                  //         context,
-                  //         new MaterialPageRoute(
-                  //             builder: (context) => FF_heightAndWeight()));
-                  //   },
-                  //   color: const Color(0xff27ae60),
-                  //   child: const Text(
-                  //     "Reset Password",
-                  //     style: TextStyle(
-                  //       fontFamily: 'Montserrat',
-                  //       fontSize: 20,
-                  //       color: const Color(0xffffffff),
-                  //       fontWeight: FontWeight.w900,
-                  //     ),
-                  //     textAlign: TextAlign.center,
-                  //   ),
-                  // ))
                   child: FlatButton(
                     onPressed: () async {
+                      Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => FF_dashboard()));
                       final email = nameController.text.toString();
                       final password = passController.text.toString();
                       final connect = conn.getConnection().isConnected;
@@ -167,6 +153,7 @@ class FF_resetPassword extends StatelessWidget {
                                 context: context,
                                 title: "Success!",
                                 description: "Your password has been reset!",
+                                
                               );
                             },
                           );
