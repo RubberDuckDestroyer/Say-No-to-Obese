@@ -24,6 +24,8 @@ class _PostsPageState extends State<FF_posts> {
     return result;
   }
 
+  //-----------------------------------
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffffffff),

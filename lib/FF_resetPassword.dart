@@ -9,6 +9,7 @@ import 'package:fitness_freaks/controllers/loginController.dart';
 class FF_resetPassword extends StatelessWidget {
   TextEditingController nameController = TextEditingController();
   TextEditingController passController = TextEditingController();
+  TextEditingController confirmPassController = TextEditingController();
   // LoginController conn = LoginController();
 
   FF_resetPassword({Key key, this.conn}) : super(key: key);
@@ -138,7 +139,13 @@ class FF_resetPassword extends StatelessWidget {
                               builder: (context) => FF_dashboard()));
                       final email = nameController.text.toString();
                       final password = passController.text.toString();
-                      final connect = conn.getConnection().isConnected;
+                      final confirmPassword = confirmPassController.text.toString();
+                      var connect = conn.getConnection().isConnected;
+
+                      // Compare passwords
+                      if (password != confirmPassword){
+                        connect = false;
+                      }
 
                       if (connect) {
                         // Reset password if connected
@@ -179,7 +186,7 @@ class FF_resetPassword extends StatelessWidget {
                             return TextPopup(
                               context: context,
                               title: "ERROR",
-                              description: "Invalid email or password :(",
+                              description: "Invalid email or passwords do not match :(",
                             );
                           },
                         );
@@ -316,7 +323,7 @@ class FF_resetPassword extends StatelessWidget {
                 width: 258.0,
                 height: 47.0,
                 child: TextField(
-                  // controller: passController,
+                  controller: confirmPassController,
                   enabled: true,
                   decoration:
                       InputDecoration(hintText: 'Re-enter the Password'),
