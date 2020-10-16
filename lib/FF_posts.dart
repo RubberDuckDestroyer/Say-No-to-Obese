@@ -533,7 +533,7 @@ class Workout1 extends StatelessWidget {
                   }),
               RaisedButton(
                   color: const Color(0xff2980b9),
-                  child: const Text('Add',
+                  child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 17.0,
@@ -598,7 +598,7 @@ class Workout1 extends StatelessWidget {
                   FlatButton(
                     color: Colors.green,
                     child: Text(
-                      'Add To Dashboard',
+                      'Save To Dashboard',
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {},
