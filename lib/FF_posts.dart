@@ -1,8 +1,13 @@
+import 'package:fitness_freaks/carousel_items/Workouts/ShoulderWorkout.dart';
+import 'package:fitness_freaks/carousel_items/Workouts/chestWorkout.dart';
+import 'package:fitness_freaks/carousel_items/Workouts/legsWorkout.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fitness_freaks/styles/NormalWhiteText.dart';
+
+import 'carousel_items/Workouts/backWorkout.dart';
 
 class FF_posts extends StatefulWidget {
   @override
@@ -420,9 +425,69 @@ class Workout4 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 17.0,
                   fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewBackPopup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewBackPopup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                chestWorkout,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -452,11 +517,73 @@ class Workout3 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 17.0,
                   fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewBackPopup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
   }
+
+  void viewBackPopup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                legsWorkout,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
+  }
 }
+
+//-------------------------------------------------------------Back Workout---------------------------------------------------------------------
 
 class Workout2 extends StatelessWidget {
   const Workout2({Key key}) : super(key: key);
@@ -484,11 +611,73 @@ class Workout2 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 17.0,
                   fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewBackPopup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
   }
+
+  void viewBackPopup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                backWorkout,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
+  }
 }
+
+//-------------------------------------------------------------Shoulder Workout---------------------------------------------------------------------
 
 class Workout1 extends StatelessWidget {
   const Workout1({Key key}) : super(key: key);
@@ -529,7 +718,7 @@ class Workout1 extends StatelessWidget {
                           fontSize: 17.0,
                           fontWeight: FontWeight.w600)),
                   onPressed: () {
-                    viewWorkoutPopup(context);
+                    viewShoulderPopup(context);
                   }),
               RaisedButton(
                   color: const Color(0xff2980b9),
@@ -546,67 +735,40 @@ class Workout1 extends StatelessWidget {
     );
   }
 
-  void viewWorkoutPopup(context) {
+  void viewShoulderPopup(context) {
     showModalBottomSheet(
         isScrollControlled: true,
         context: context,
         builder: (BuildContext bc) {
           return Container(
-            color: const Color(0xff343a5e),
-            height: 630,
-            child: Column(children: <Widget>[
-              Padding(
-                  padding: EdgeInsets.all(15),
-                  child: Text('Shoulder Workout',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 23,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                      ))),
-              Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Text(
-                      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 17,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w300,
-                      ))),
-              Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Image.asset(
-                    'assets/carousel_images/workout1.jpg',
-                    scale: 2.5,
-                  )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  FlatButton(
-                    color: const Color(0xff2980b9),
-                    child: Text(
-                      'Back',
-                      style: TextStyle(color: Colors.white),
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                shoulderWorkout,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
                     ),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                  FlatButton(
-                    color: Colors.green,
-                    child: Text(
-                      'Save To Dashboard',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onPressed: () {},
-                  )
-                ],
-              )
-            ]),
-          );
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
         });
   }
 }
