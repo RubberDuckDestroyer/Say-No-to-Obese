@@ -240,7 +240,13 @@ class Post4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: BoxDecoration(
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -249,9 +255,74 @@ class Post4 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewPost4Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewPost4Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -260,7 +331,13 @@ class Post3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: BoxDecoration(
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -269,9 +346,74 @@ class Post3 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewPost3Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewPost3Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -280,7 +422,13 @@ class Post2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: BoxDecoration(
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -289,9 +437,74 @@ class Post2 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewPost2Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewPost2Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -300,7 +513,13 @@ class Post1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: BoxDecoration(
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -309,9 +528,74 @@ class Post1 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewPost1Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewPost1Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -321,18 +605,89 @@ class Meal4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: BoxDecoration(
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text("Meal 4",
+          Text("Meal 1",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewMeal4Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewMeal4Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -342,7 +697,13 @@ class Meal3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: BoxDecoration(
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -351,9 +712,74 @@ class Meal3 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewMeal3Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewMeal3Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -363,7 +789,13 @@ class Meal2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: BoxDecoration(
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -372,9 +804,74 @@ class Meal2 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewMeal2Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewMeal2Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -384,19 +881,89 @@ class Meal1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: BoxDecoration(
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text("Meal 1",
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 22.0,
-                fontWeight: FontWeight.bold,
-              )),
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewMeal1Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewMeal1Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
