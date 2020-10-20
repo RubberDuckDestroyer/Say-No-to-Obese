@@ -10,6 +10,8 @@ import 'package:fitness_freaks/styles/NormalWhiteText.dart';
 
 import 'carousel_items/Workouts/backWorkout.dart';
 import 'carousel_items/Workouts/meals/dairyFreeMeal.dart';
+import 'carousel_items/Workouts/meals/glutenFreeMeal.dart';
+import 'carousel_items/Workouts/meals/veganMeal.dart';
 
 class FF_posts extends StatefulWidget {
   @override
@@ -611,21 +613,21 @@ class Meal4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          // image: const DecorationImage(
-          //   image: NetworkImage(
-          //       INSERT CAROUSEL IMAGE HERE,
-          //   fit: BoxFit.cover,
-          // ),
-          ),
+        color: Colors.white,
+        image: const DecorationImage(
+          image: AssetImage('assets/carousel_images/meal4.PNG'),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text("Meal 1",
+          Text("Meal 4",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
-          Text("*****",
+          Text("Vegan Meal",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 17.0,
@@ -667,7 +669,7 @@ class Meal4 extends StatelessWidget {
               color: const Color(0xff343a5e),
               height: 630,
               child: Column(children: <Widget>[
-                //Insert Content here
+                veganMeal,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -703,12 +705,12 @@ class Meal3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          // image: const DecorationImage(
-          //   image: NetworkImage(
-          //       INSERT CAROUSEL IMAGE HERE,
-          //   fit: BoxFit.cover,
-          // ),
-          ),
+        color: Colors.white,
+        image: const DecorationImage(
+          image: AssetImage('assets/carousel_images/meal3.PNG'),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -717,7 +719,7 @@ class Meal3 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
-          Text("*****",
+          Text("Gluten Free Meal",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 17.0,
@@ -759,7 +761,7 @@ class Meal3 extends StatelessWidget {
               color: const Color(0xff343a5e),
               height: 630,
               child: Column(children: <Widget>[
-                //Insert Content here
+                glutenFreeMeal,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
