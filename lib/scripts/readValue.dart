@@ -3,13 +3,16 @@
 */
 import 'package:mongo_dart/mongo_dart.dart';
 
-Future<Map> readValue(Db conn, String coll, SelectorBuilder selector) async {
+Future<Map<String, dynamic>> readValueFor(
+    Db conn, String coll, dynamic selector) async {
+  var result;
   try {
+    result = null;
     final collection = conn.collection(coll);
     final res = collection.findOne(selector);
 
     if (res != null) {
-      return res;
+      result = res;
     }
   } catch (e) {
     print("There was an error when trying to read from collection " +
@@ -18,5 +21,5 @@ Future<Map> readValue(Db conn, String coll, SelectorBuilder selector) async {
     print(e);
   }
 
-  return null;
+  return result;
 }
