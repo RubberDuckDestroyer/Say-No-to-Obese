@@ -1,3 +1,4 @@
+import 'package:fitness_freaks/FF_posts.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import './FF_dashboard.dart';
@@ -191,7 +192,7 @@ class _dietPreferencesstate extends State<FF_dietPreferences> {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => FF_dashboard()));
+                              builder: (context) => FF_posts()));
                     },
                     color: const Color(0xffcf6464),
                     child: const Text(

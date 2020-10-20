@@ -12,14 +12,13 @@ import 'styles/TitleText.dart';
 class FF_logIn extends StatelessWidget {
   TextEditingController nameController = TextEditingController();
   TextEditingController passController = TextEditingController();
-  LoginController conn = LoginController();
+  // LoginController conn = LoginController();
 
   String uri =
       "mongodb+srv://fitnessfreaks:roW4x8esRB91viFi@cluster0.bqckt.mongodb.net/main?retryWrites=true&w=majority";
 
-  FF_logIn({
-    Key key,
-  }) : super(key: key);
+  FF_logIn({Key key, this.conn}) : super(key: key);
+  final LoginController conn;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -229,7 +228,8 @@ class FF_logIn extends StatelessWidget {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => FF_resetPassword()));
+                              builder: (context) =>
+                                  FF_resetPassword(conn: conn)));
                     },
                     color: const Color(0xffcf6464),
                     child: const Text(
@@ -258,7 +258,7 @@ class FF_logIn extends StatelessWidget {
                     onPressed: () async {
                       final email = nameController.text.toString();
                       final password = passController.text.toString();
-                      final connect = await conn.connect(uri);
+                      final connect = conn.isConnected;
                       if (connect) {
                         print(connect);
                         final isLoggedIn = await conn.login(email, password);

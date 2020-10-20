@@ -10,7 +10,8 @@ Future<bool> resetPasswordFor(Db conn, String email, String password) async {
 
     final users = conn.collection("users");
     final res = await users.findOne(where.eq("email", email));
-
+    print('trying to reset password');
+    print(res);
     if (res != null) {
       res["password"] = password;
       await users.save(res).then((value) {
@@ -24,6 +25,6 @@ Future<bool> resetPasswordFor(Db conn, String email, String password) async {
   } catch (e) {
     print("There was an error while trying to reset the user's password.");
   }
-
+  print(updated);
   return updated;
 }

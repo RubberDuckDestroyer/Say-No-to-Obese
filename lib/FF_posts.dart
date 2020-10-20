@@ -1,8 +1,13 @@
+import 'package:fitness_freaks/carousel_items/Workouts/ShoulderWorkout.dart';
+import 'package:fitness_freaks/carousel_items/Workouts/chestWorkout.dart';
+import 'package:fitness_freaks/carousel_items/Workouts/legsWorkout.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fitness_freaks/styles/NormalWhiteText.dart';
+
+import 'carousel_items/Workouts/backWorkout.dart';
 
 class FF_posts extends StatefulWidget {
   @override
@@ -23,6 +28,8 @@ class _PostsPageState extends State<FF_posts> {
     }
     return result;
   }
+
+  //-----------------------------------
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,11 +117,6 @@ class _PostsPageState extends State<FF_posts> {
                       pinRight: true,
                       pinTop: true,
                       fixedHeight: true,
-                      child: SvgPicture.string(
-                        _svg_2u2hp6,
-                        allowDrawingOutsideViewBox: true,
-                        fit: BoxFit.fill,
-                      ),
                     ),
                     Pinned.fromSize(
                       bounds: Rect.fromLTWH(0.0, 6.2, 20.5, 1.0),
@@ -122,11 +124,6 @@ class _PostsPageState extends State<FF_posts> {
                       pinLeft: true,
                       pinRight: true,
                       fixedHeight: true,
-                      child: SvgPicture.string(
-                        _svg_vq5bjh,
-                        allowDrawingOutsideViewBox: true,
-                        fit: BoxFit.fill,
-                      ),
                     ),
                     Pinned.fromSize(
                       bounds: Rect.fromLTWH(0.0, 12.3, 20.5, 1.0),
@@ -135,11 +132,6 @@ class _PostsPageState extends State<FF_posts> {
                       pinRight: true,
                       pinBottom: true,
                       fixedHeight: true,
-                      child: SvgPicture.string(
-                        _svg_a0hp8f,
-                        allowDrawingOutsideViewBox: true,
-                        fit: BoxFit.fill,
-                      ),
                     ),
                   ],
                 ),
@@ -249,18 +241,12 @@ class Post4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
-      ),
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -269,9 +255,74 @@ class Post4 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewPost4Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewPost4Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -281,18 +332,12 @@ class Post3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
-      ),
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -301,9 +346,74 @@ class Post3 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewPost3Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewPost3Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -313,18 +423,12 @@ class Post2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
-      ),
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -333,9 +437,74 @@ class Post2 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewPost2Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewPost2Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -345,18 +514,12 @@ class Post1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
-      ),
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -365,9 +528,74 @@ class Post1 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewPost1Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewPost1Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -378,29 +606,88 @@ class Meal4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
-      ),
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text("Meal 4",
+          Text("Meal 1",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewMeal4Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewMeal4Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -411,18 +698,12 @@ class Meal3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
-      ),
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -431,9 +712,74 @@ class Meal3 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewMeal3Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewMeal3Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -444,18 +790,12 @@ class Meal2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
-      ),
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -464,9 +804,74 @@ class Meal2 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewMeal2Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewMeal2Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -477,30 +882,88 @@ class Meal1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
-      ),
+          // image: const DecorationImage(
+          //   image: NetworkImage(
+          //       INSERT CAROUSEL IMAGE HERE,
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text("Meal 1",
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 22.0,
-                fontWeight: FontWeight.bold,
-              )),
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold)),
+          Text("*****",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewMeal1Popup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewMeal1Popup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                //Insert Content here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -510,17 +973,11 @@ class Workout4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
+        image: const DecorationImage(
+          image: NetworkImage(
+              'https://www.thetrendspotter.net/wp-content/uploads/2020/04/Chest-Workout-Men.jpg'),
+          fit: BoxFit.cover,
+        ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -535,9 +992,69 @@ class Workout4 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 17.0,
                   fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewBackPopup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
+  }
+
+  void viewBackPopup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                chestWorkout,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
 
@@ -548,17 +1065,11 @@ class Workout3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
+        image: const DecorationImage(
+          image: NetworkImage(
+              'https://qph.fs.quoracdn.net/main-qimg-93ebe263c40560116bd64e5ef1dd4444.webp'),
+          fit: BoxFit.cover,
+        ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -573,11 +1084,73 @@ class Workout3 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 17.0,
                   fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewBackPopup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
   }
+
+  void viewBackPopup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                legsWorkout,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
+  }
 }
+
+//-------------------------------------------------------------Back Workout---------------------------------------------------------------------
 
 class Workout2 extends StatelessWidget {
   const Workout2({Key key}) : super(key: key);
@@ -585,6 +1158,13 @@ class Workout2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        image: const DecorationImage(
+          image: NetworkImage(
+              'https://cdn.mos.cms.futurecdn.net/nhrgrnDTfrfsAPDiZWsDk6-768-80.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -598,11 +1178,73 @@ class Workout2 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 17.0,
                   fontWeight: FontWeight.w600)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewBackPopup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
   }
+
+  void viewBackPopup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                backWorkout,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
+  }
 }
+
+//-------------------------------------------------------------Shoulder Workout---------------------------------------------------------------------
 
 class Workout1 extends StatelessWidget {
   const Workout1({Key key}) : super(key: key);
@@ -611,11 +1253,11 @@ class Workout1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [0.3, 1],
-            colors: [Color(0xff5f2c82), Color(0xff49a09d)]),
+        color: Colors.white,
+        image: const DecorationImage(
+          image: AssetImage('assets/carousel_images/workout3.jpg'),
+          fit: BoxFit.cover,
+        ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -625,20 +1267,75 @@ class Workout1 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
+          SizedBox(height: 5),
           Text("Sholders",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 17.0,
                   fontWeight: FontWeight.w600)),
+          SizedBox(height: 15),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('View',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {
+                    viewShoulderPopup(context);
+                  }),
+              RaisedButton(
+                  color: const Color(0xff2980b9),
+                  child: const Text('Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w600)),
+                  onPressed: () {}),
+            ],
+          )
         ],
       ),
     );
   }
-}
 
-const String _svg_2u2hp6 =
-    '<svg viewBox="0.0 0.0 20.5 1.0" ><path  d="M 20.54449462890625 0 L 0 0" fill="none" stroke="#ffffff" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
-const String _svg_vq5bjh =
-    '<svg viewBox="0.0 6.2 20.5 1.0" ><path transform="translate(0.0, 6.16)" d="M 0 0 L 20.54449462890625 0" fill="none" stroke="#ffffff" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
-const String _svg_a0hp8f =
-    '<svg viewBox="0.0 12.3 20.5 1.0" ><path transform="translate(0.0, 12.33)" d="M 0 0 L 20.54449462890625 0" fill="none" stroke="#ffffff" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+  void viewShoulderPopup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 630,
+              child: Column(children: <Widget>[
+                shoulderWorkout,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color(0xff2980b9),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: Colors.green,
+                      child: Text(
+                        'Save To Dashboard',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
+  }
+}

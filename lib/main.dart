@@ -16,7 +16,7 @@ Future<void> main() async {
 
   if (connect) {
     print("running app");
-    runApp(MyApp());
+    runApp(MyApp(conn: conn));
   } else {
     print("ERROR Could not connect to database");
   }
@@ -24,6 +24,11 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  MyApp({
+    this.conn
+  });
+  final LoginController conn;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -46,7 +51,7 @@ class MyApp extends StatelessWidget {
       ),
 
       // home: FF_logIn(),
-      home: FF_logIn(),
+      home: FF_logIn(conn: this.conn),
 
       // home: FF_resetPassword(),
     );

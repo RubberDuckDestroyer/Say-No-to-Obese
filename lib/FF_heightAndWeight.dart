@@ -11,7 +11,7 @@ class FF_heightAndWeight extends StatefulWidget {
 }
 
 class _HeightAndWeightstate extends State<FF_heightAndWeight> {
-  bool fatButton = false;
+  bool fatButton = true;
   bool muscleButton = true;
   bool pressAttention = false;
   @override
