@@ -1,6 +1,7 @@
 /*
 ** This is a controller that handles all the login functionality 
 */
+import 'package:fitness_freaks/scripts/writeVaue.dart';
 import 'package:mongo_dart/mongo_dart.dart';
 import 'package:fitness_freaks/scripts/resetPassword.dart';
 import 'package:fitness_freaks/scripts/readValue.dart';
@@ -76,5 +77,12 @@ class LoginController {
     } else {
       return null;
     }
+  }
+
+  Future<bool> writeValue(
+      String collection, Map<String, dynamic> document) async {
+    print("Writing value");
+    final result = await writeValueFor(this._db, collection, document);
+    return result;
   }
 }
