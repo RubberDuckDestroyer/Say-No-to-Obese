@@ -1,17 +1,21 @@
+import 'package:fitness_freaks/FF_dashboard.dart';
 import 'package:fitness_freaks/carousel_items/Workouts/ShoulderWorkout.dart';
 import 'package:fitness_freaks/carousel_items/Workouts/chestWorkout.dart';
 import 'package:fitness_freaks/carousel_items/Workouts/legsWorkout.dart';
+import 'package:fitness_freaks/controllers/loginController.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fitness_freaks/styles/NormalWhiteText.dart';
-
 import 'carousel_items/Workouts/backWorkout.dart';
 
 class FF_posts extends StatefulWidget {
   @override
   _PostsPageState createState() => new _PostsPageState();
+
+  FF_posts({Key key, this.conn}) : super(key: key);
+  final LoginController conn;
 }
 
 class _PostsPageState extends State<FF_posts> {
@@ -52,22 +56,40 @@ class _PostsPageState extends State<FF_posts> {
                       pinTop: true,
                       pinBottom: true,
                       child: Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Icon(
+                              Icons.search,
+                              color: Colors.white,
+                              size: 28.0,
+                            ),
+                            new IconButton(
+                              icon: Icon(Icons.home, color: Colors.white),
+                              onPressed: () {
+                                setState(() {
+                                  print('pressed');
+                                  Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                          builder: (context) =>
+                                              FF_dashboard()));
+                                });
+                              },
+                            ),
+                            Icon(
+                              Icons.timeline,
+                              color: Colors.white,
+                              size: 28.0,
+                            ),
+                          ],
+                        ),
                         decoration: BoxDecoration(
                           color: const Color(0xff343a5e),
                         ),
                       ),
                     ),
                   ],
-                ),
-              ),
-            ),
-            Transform.translate(
-              offset: Offset(0.0, 637.0),
-              child: Container(
-                width: 137.0,
-                height: 52.0,
-                decoration: BoxDecoration(
-                  color: const Color(0xff262b46),
                 ),
               ),
             ),
