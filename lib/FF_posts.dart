@@ -12,6 +12,7 @@ import 'carousel_items/Workouts/backWorkout.dart';
 import 'carousel_items/Workouts/meals/dairyFreeMeal.dart';
 import 'carousel_items/Workouts/meals/glutenFreeMeal.dart';
 import 'carousel_items/Workouts/meals/veganMeal.dart';
+import 'controllers/loginController.dart';
 
 class FF_posts extends StatefulWidget {
   @override
@@ -44,58 +45,6 @@ class _PostsPageState extends State<FF_posts> {
       body: Column(children: [
         Stack(
           children: <Widget>[
-            Transform.translate(
-              offset: Offset(0.0, 679.0),
-              child: SizedBox(
-                width: 411.0,
-                height: 52.0,
-                child: Stack(
-                  children: <Widget>[
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(0.0, -45.0, 415.0, 52.0),
-                      size: Size(411.0, 52.0),
-                      pinLeft: true,
-                      pinRight: true,
-                      pinTop: true,
-                      pinBottom: true,
-                      child: Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Icon(
-                              Icons.search,
-                              color: Colors.white,
-                              size: 28.0,
-                            ),
-                            new IconButton(
-                              icon: Icon(Icons.home, color: Colors.white),
-                              onPressed: () {
-                                setState(() {
-                                  print('pressed');
-                                  Navigator.push(
-                                      context,
-                                      new MaterialPageRoute(
-                                          builder: (context) =>
-                                              FF_dashboard()));
-                                });
-                              },
-                            ),
-                            Icon(
-                              Icons.timeline,
-                              color: Colors.white,
-                              size: 28.0,
-                            ),
-                          ],
-                        ),
-                        decoration: BoxDecoration(
-                          color: const Color(0xff343a5e),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
             Container(
               width: 411.0,
               height: 52.0,
@@ -103,8 +52,9 @@ class _PostsPageState extends State<FF_posts> {
                 color: const Color(0xff343a5e),
               ),
             ),
-            Transform.translate(
-              offset: Offset(167.0, 14.0),
+            Positioned(
+              top: 10,
+              left: 165,
               child: SizedBox(
                 width: 78.0,
                 height: 29.0,
@@ -128,41 +78,37 @@ class _PostsPageState extends State<FF_posts> {
                 )),
               ),
             ),
-            Transform.translate(
-              offset: Offset(357.5, 22.5),
-              child: SizedBox(
-                width: 21.0,
-                height: 12.0,
-                child: Stack(
-                  children: <Widget>[
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(0.0, 0.0, 20.5, 1.0),
-                      size: Size(20.5, 12.3),
-                      pinLeft: true,
-                      pinRight: true,
-                      pinTop: true,
-                      fixedHeight: true,
-                    ),
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(0.0, 6.2, 20.5, 1.0),
-                      size: Size(20.5, 12.3),
-                      pinLeft: true,
-                      pinRight: true,
-                      fixedHeight: true,
-                    ),
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(0.0, 12.3, 20.5, 1.0),
-                      size: Size(20.5, 12.3),
-                      pinLeft: true,
-                      pinRight: true,
-                      pinBottom: true,
-                      fixedHeight: true,
-                    ),
-                  ],
-                ),
+            SizedBox(
+              width: 21.0,
+              height: 12.0,
+              child: Stack(
+                children: <Widget>[
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 0.0, 20.5, 1.0),
+                    size: Size(20.5, 12.3),
+                    pinLeft: true,
+                    pinRight: true,
+                    pinTop: true,
+                    fixedHeight: true,
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 6.2, 20.5, 1.0),
+                    size: Size(20.5, 12.3),
+                    pinLeft: true,
+                    pinRight: true,
+                    fixedHeight: true,
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 12.3, 20.5, 1.0),
+                    size: Size(20.5, 12.3),
+                    pinLeft: true,
+                    pinRight: true,
+                    pinBottom: true,
+                    fixedHeight: true,
+                  ),
+                ],
               ),
             ),
-            Transform.translate(offset: Offset(100.5, 100.5)),
           ],
         ),
         Text("WORKOUTS",
@@ -255,6 +201,44 @@ class _PostsPageState extends State<FF_posts> {
             });
           }).toList(),
         ),
+        Container(
+          margin: EdgeInsets.fromLTRB(0, 34.4, 0, 0),
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                left: 0,
+                height: 50.0,
+                width: 412.0,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xff343a5e),
+                  ),
+                ),
+              ),
+              Positioned(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Icon(
+                      Icons.search,
+                      color: Colors.white,
+                      size: 25.0,
+                    ),
+                    new IconButton(
+                      icon: Icon(Icons.timeline, color: Colors.white),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => FF_dashboard()));
+                      },
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        )
       ]),
     );
   }
