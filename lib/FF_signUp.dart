@@ -1,4 +1,5 @@
 import 'package:fitness_freaks/FF_heightAndWeight.dart';
+import 'package:fitness_freaks/widgets/TextPopup.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:fitness_freaks/controllers/loginController.dart';
@@ -118,11 +119,26 @@ class FF_signUp extends StatelessWidget {
                         } else {
 
                           print('There was an error on creating user');
+
+                        //   return TextPopup(
+                        //         context: context,
+                        //         title: "ERROR",
+                        //         description: "Please enter a valid email address or Password",
+                        //       );
                         }
                       } else {
-                        print('Invalid email or password');
-                      }
-                    },
+                          await showDialog<void>(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return TextPopup(
+                                context: context,
+                                title: "ERROR",
+                                description: "Invalid email or password :(",
+                              );
+                            },
+                          );
+                        }
+                      },
                     color: const Color(0xff27ae60),
                     child: const Text(
                       "Sign Up",

@@ -277,7 +277,7 @@ class Post4 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('View',
                       style: TextStyle(
                           color: Colors.white,
@@ -287,7 +287,7 @@ class Post4 extends StatelessWidget {
                     viewPost4Popup(context);
                   }),
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
@@ -368,7 +368,7 @@ class Post3 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('View',
                       style: TextStyle(
                           color: Colors.white,
@@ -378,7 +378,7 @@ class Post3 extends StatelessWidget {
                     viewPost3Popup(context);
                   }),
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
@@ -459,7 +459,7 @@ class Post2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('View',
                       style: TextStyle(
                           color: Colors.white,
@@ -469,7 +469,7 @@ class Post2 extends StatelessWidget {
                     viewPost2Popup(context);
                   }),
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
@@ -550,7 +550,7 @@ class Post1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('View',
                       style: TextStyle(
                           color: Colors.white,
@@ -560,7 +560,7 @@ class Post1 extends StatelessWidget {
                     viewPost1Popup(context);
                   }),
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
@@ -629,7 +629,7 @@ class Meal4 extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text("Meal 1",
+          Text("Meal 4",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 22.0,
@@ -643,7 +643,7 @@ class Meal4 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('View',
                       style: TextStyle(
                           color: Colors.white,
@@ -653,7 +653,7 @@ class Meal4 extends StatelessWidget {
                     viewMeal4Popup(context);
                   }),
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
@@ -735,7 +735,7 @@ class Meal3 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('View',
                       style: TextStyle(
                           color: Colors.white,
@@ -745,7 +745,7 @@ class Meal3 extends StatelessWidget {
                     viewMeal3Popup(context);
                   }),
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
@@ -827,7 +827,7 @@ class Meal2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('View',
                       style: TextStyle(
                           color: Colors.white,
@@ -837,7 +837,7 @@ class Meal2 extends StatelessWidget {
                     viewMeal2Popup(context);
                   }),
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
@@ -919,7 +919,7 @@ class Meal1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('View',
                       style: TextStyle(
                           color: Colors.white,
@@ -929,7 +929,7 @@ class Meal1 extends StatelessWidget {
                     viewMeal1Popup(context);
                   }),
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
@@ -1010,7 +1010,7 @@ class Workout4 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('View',
                       style: TextStyle(
                           color: Colors.white,
@@ -1020,7 +1020,7 @@ class Workout4 extends StatelessWidget {
                     viewBackPopup(context);
                   }),
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
@@ -1102,7 +1102,7 @@ class Workout3 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('View',
                       style: TextStyle(
                           color: Colors.white,
@@ -1112,7 +1112,7 @@ class Workout3 extends StatelessWidget {
                     viewBackPopup(context);
                   }),
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
@@ -1196,7 +1196,7 @@ class Workout2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('View',
                       style: TextStyle(
                           color: Colors.white,
@@ -1206,7 +1206,7 @@ class Workout2 extends StatelessWidget {
                     viewBackPopup(context);
                   }),
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
@@ -1292,7 +1292,7 @@ class Workout1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('View',
                       style: TextStyle(
                           color: Colors.white,
@@ -1302,7 +1302,7 @@ class Workout1 extends StatelessWidget {
                     viewShoulderPopup(context);
                   }),
               RaisedButton(
-                  color: const Color(0xff2980b9),
+                  color: const Color(0xff343a5e),
                   child: const Text('Save',
                       style: TextStyle(
                           color: Colors.white,
