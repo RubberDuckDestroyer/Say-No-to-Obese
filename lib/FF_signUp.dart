@@ -1,5 +1,3 @@
-import 'dart:ffi';
-import 'package:fitness_freaks/FF_dashboard.dart';
 import 'package:fitness_freaks/FF_heightAndWeight.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -8,18 +6,16 @@ import 'package:flutter/services.dart';
 
 class FF_signUp extends StatelessWidget {
   TextEditingController fullNameController = TextEditingController();
-  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
   TextEditingController reEnterPassController = TextEditingController();
 
-  LoginController conn = LoginController();
-
-String uri =
+  String uri =
       "mongodb+srv://fitnessfreaks:roW4x8esRB91viFi@cluster0.bqckt.mongodb.net/main?retryWrites=true&w=majority";
 
-  FF_signUp({
-    Key key,
-  }) : super(key: key);
+  FF_signUp({Key key, this.conn}) : super(key: key);
+  final LoginController conn;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,13 +96,30 @@ String uri =
                   width: 240,
                   height: 40,
                   child: FlatButton(
-                    onPressed: () 
-                      //Sign up logic
-                    {
-                      Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => FF_heightAndWeight()));
+                    onPressed: () async {
+                      final email = emailController.text.toString();
+                      final password = passController.text.toString();
+                      final confirmPassword =
+                          reEnterPassController.text.toString();
+                      final name = fullNameController.text.toString();
+
+                      if (email.contains("@") &&
+                          (confirmPassword == password)) {
+                        // Create user in db
+                        final res =
+                            await conn.createUser(name, email, password);
+                        if (res == true) {
+                          // Navigate to next page
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => FF_heightAndWeight()));
+                        } else {
+                          // There was an error on creating user
+                        }
+                      } else {
+                        // Invalid email or password
+                      }
                     },
                     color: const Color(0xff27ae60),
                     child: const Text(
