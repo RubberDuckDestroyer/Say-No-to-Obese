@@ -102,7 +102,8 @@ class FF_signUp extends StatelessWidget {
                       final confirmPassword =
                           reEnterPassController.text.toString();
                       final name = fullNameController.text.toString();
-
+                      print(email);
+                      print((email.contains("@")));           
                       if (email.contains("@") &&
                           (confirmPassword == password)) {
                         // Create user in db
@@ -115,10 +116,11 @@ class FF_signUp extends StatelessWidget {
                               new MaterialPageRoute(
                                   builder: (context) => FF_heightAndWeight()));
                         } else {
-                          // There was an error on creating user
+
+                          print('There was an error on creating user');
                         }
                       } else {
-                        // Invalid email or password
+                        print('Invalid email or password');
                       }
                     },
                     color: const Color(0xff27ae60),
@@ -169,7 +171,7 @@ class FF_signUp extends StatelessWidget {
                 width: 258.0,
                 height: 47.0,
                 child: TextField(
-                  // controller: nameController,
+                  controller: fullNameController,
                   enabled: true,
                   decoration: InputDecoration(hintText: 'Enter your Full Name'),
                   keyboardType: TextInputType.name,
@@ -210,6 +212,7 @@ class FF_signUp extends StatelessWidget {
                 width: 258.0,
                 height: 47.0,
                 child: TextField(
+                  controller: emailController,
                   enabled: true,
                   decoration:
                       InputDecoration(hintText: 'Enter your Email Address'),
@@ -251,7 +254,7 @@ class FF_signUp extends StatelessWidget {
                 width: 258.0,
                 height: 47.0,
                 child: TextField(
-                  // controller: passController,
+                  controller: passController,
                   enabled: true,
                   decoration: InputDecoration(hintText: 'Pick a Password'),
                   obscureText: true,
@@ -291,7 +294,7 @@ class FF_signUp extends StatelessWidget {
                 width: 258.0,
                 height: 47.0,
                 child: TextField(
-                  // controller: passController,
+                  controller: reEnterPassController,
                   enabled: true,
                   decoration:
                       InputDecoration(hintText: 'Re-enter the Password'),
