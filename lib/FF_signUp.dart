@@ -7,12 +7,15 @@ import 'package:fitness_freaks/controllers/loginController.dart';
 import 'package:flutter/services.dart';
 
 class FF_signUp extends StatelessWidget {
-  // TextEditingController nameController = TextEditingController();
-  // TextEditingController passController = TextEditingController();
-  // LoginController conn = LoginController();
+  TextEditingController fullNameController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passController = TextEditingController();
+  TextEditingController reEnterPassController = TextEditingController();
 
-  // String uri =
-  //     "mongodb+srv://fitnessfreaks:roW4x8esRB91viFi@cluster0.bqckt.mongodb.net/main?retryWrites=true&w=majority";
+  LoginController conn = LoginController();
+
+String uri =
+      "mongodb+srv://fitnessfreaks:roW4x8esRB91viFi@cluster0.bqckt.mongodb.net/main?retryWrites=true&w=majority";
 
   FF_signUp({
     Key key,
@@ -97,7 +100,9 @@ class FF_signUp extends StatelessWidget {
                   width: 240,
                   height: 40,
                   child: FlatButton(
-                    onPressed: () {
+                    onPressed: () 
+                      //Sign up logic
+                    {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(
