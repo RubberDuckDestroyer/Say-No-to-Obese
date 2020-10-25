@@ -192,7 +192,7 @@ class _dietPreferencesstate extends State<FF_dietPreferences> {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => FF_dashboard()));
+                              builder: (context) => FF_posts()));
                     },
                     color: const Color(0xffcf6464),
                     child: const Text(

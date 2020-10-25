@@ -14,6 +14,8 @@ import 'carousel_items/Workouts/meals/glutenFreeMeal.dart';
 import 'carousel_items/Workouts/meals/veganMeal.dart';
 import 'controllers/loginController.dart';
 
+import 'carousel_items/Workouts/backWorkout.dart';
+
 class FF_posts extends StatefulWidget {
   @override
   _PostsPageState createState() => new _PostsPageState();
@@ -38,6 +40,7 @@ class _PostsPageState extends State<FF_posts> {
   }
 
   //-----------------------------------------------------Title----------------------------------------------------------
+
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -618,6 +621,7 @@ class Meal4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+
         color: Colors.white,
         image: const DecorationImage(
           image: AssetImage('assets/carousel_images/meal4.PNG'),
@@ -627,7 +631,7 @@ class Meal4 extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text("Meal 4",
+          Text("Meal 1",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 22.0,
