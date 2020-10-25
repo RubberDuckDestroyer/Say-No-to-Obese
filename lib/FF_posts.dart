@@ -203,45 +203,42 @@ class _PostsPageState extends State<FF_posts> {
             });
           }).toList(),
         ),
-        Container(
-          margin: EdgeInsets.fromLTRB(0, 34.4, 0, 0),
-          child: Stack(
-            children: <Widget>[
-              Positioned(
-                left: 0,
-                height: 50.0,
-                width: 412.0,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xff343a5e),
-                  ),
-                ),
-              ),
-              Positioned(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Icon(
-                      Icons.search,
-                      color: Colors.white,
-                      size: 25.0,
-                    ),
-                    new IconButton(
-                      icon: Icon(Icons.timeline, color: Colors.white),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) => FF_dashboard()));
-                      },
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        )
       ]),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color(0xff343a5e),
+        currentIndex: _currentIndex,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            title: Text(
+              'Posts',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.timeline,
+              color: Colors.white,
+            ),
+            title: Text(
+              'Dashboard',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ],
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+            if (index == 1) {
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => FF_dashboard()));
+            }
+          });
+        },
+      ),
     );
   }
 }
