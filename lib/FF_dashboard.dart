@@ -1,6 +1,8 @@
 import 'package:fitness_freaks/FF_posts.dart';
+import 'package:fitness_freaks/styles/TitleText.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
+import 'package:intl/intl.dart';
 
 class FF_dashboard extends StatefulWidget {
   @override
@@ -9,6 +11,11 @@ class FF_dashboard extends StatefulWidget {
 
 class _DashboardPageState extends State<FF_dashboard> {
   @override
+  static final DateTime now = DateTime.now();
+  static final DateFormat formatter =
+      DateFormat('dd' + '/' + 'MM' + '/' + 'yyyy');
+  final String formatted = formatter.format(now);
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
@@ -46,6 +53,66 @@ class _DashboardPageState extends State<FF_dashboard> {
                     textAlign: TextAlign.center,
                   )),
             ),
+            Container(
+              margin: EdgeInsets.fromLTRB(210, 70.4, 0, 0),
+              child: Text(
+                'Welcome Back Nathan!',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 18,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(20, 70.4, 0, 0),
+              child: Text(
+                formatted,
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 18,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(10, 100.4, 0, 0),
+              height: MediaQuery.of(context).size.height * 0.23,
+              width: MediaQuery.of(context).size.width * 0.95,
+              child: Card(
+                  color: const Color(0xff343a5e),
+                  child: Padding(
+                    padding: EdgeInsets.all(12.0),
+                    child: Text(
+                      'My Details',
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w300,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  )),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(10, 270.4, 0, 0),
+              height: MediaQuery.of(context).size.height * 0.23,
+              width: MediaQuery.of(context).size.width * 0.95,
+              child: Card(
+                color: const Color(0xff343a5e),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(10, 440.4, 0, 0),
+              height: MediaQuery.of(context).size.height * 0.23,
+              width: MediaQuery.of(context).size.width * 0.95,
+              child: Card(
+                color: const Color(0xff343a5e),
+              ),
+            ),
             SizedBox(
               width: 21.0,
               height: 12.0,
@@ -80,7 +147,7 @@ class _DashboardPageState extends State<FF_dashboard> {
           ],
         ),
         Container(
-          margin: EdgeInsets.fromLTRB(0, 583.4, 0, 0),
+          margin: EdgeInsets.fromLTRB(0, 37.7, 0, 0),
           child: Stack(
             children: <Widget>[
               Positioned(

@@ -41,7 +41,6 @@ class _PostsPageState extends State<FF_posts> {
 
   //-----------------------------------------------------Title----------------------------------------------------------
 
-
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
@@ -174,7 +173,7 @@ class _PostsPageState extends State<FF_posts> {
             });
           }).toList(),
         ),
-        Text("POSTS",
+        Text("MOTIVATION",
             style: TextStyle(
               fontFamily: 'Montserrat',
               fontSize: 20,
@@ -621,7 +620,6 @@ class Meal4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-
         color: Colors.white,
         image: const DecorationImage(
           image: AssetImage('assets/carousel_images/meal4.PNG'),
