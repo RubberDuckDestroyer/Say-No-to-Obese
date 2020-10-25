@@ -1,8 +1,10 @@
 /*
 ** This is a controller that handles all the login functionality 
 */
+import 'package:fitness_freaks/scripts/writeVaue.dart';
 import 'package:mongo_dart/mongo_dart.dart';
 import 'package:fitness_freaks/scripts/resetPassword.dart';
+import 'package:fitness_freaks/scripts/readValue.dart';
 
 // import 'package:dotenv/dotenv.dart' show load, env;
 
@@ -63,6 +65,25 @@ class LoginController {
   Future<bool> resetPassword(String email, String password) async {
     print('resetting password');
     final result = await resetPasswordFor(this._db, email, password);
+    return result;
+  }
+
+  Future<Map<String, dynamic>> readValue(
+      String collection, dynamic selector) async {
+    print("Reading value");
+    final result = await readValueFor(this._db, collection, selector);
+    if (result.length > 0) {
+      print(result);
+      return result;
+    } else {
+      return null;
+    }
+  }
+
+  Future<bool> writeValue(
+      String collection, Map<String, dynamic> document) async {
+    print("Writing value");
+    final result = await writeValueFor(this._db, collection, document);
     return result;
   }
 }
