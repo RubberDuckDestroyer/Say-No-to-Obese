@@ -1,17 +1,27 @@
+import 'package:fitness_freaks/FF_dashboard.dart';
 import 'package:fitness_freaks/carousel_items/Workouts/ShoulderWorkout.dart';
 import 'package:fitness_freaks/carousel_items/Workouts/chestWorkout.dart';
 import 'package:fitness_freaks/carousel_items/Workouts/legsWorkout.dart';
+import 'package:fitness_freaks/carousel_items/Workouts/meals/vegetarianMeal.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fitness_freaks/styles/NormalWhiteText.dart';
+import 'carousel_items/Workouts/backWorkout.dart';
+import 'carousel_items/Workouts/meals/dairyFreeMeal.dart';
+import 'carousel_items/Workouts/meals/glutenFreeMeal.dart';
+import 'carousel_items/Workouts/meals/veganMeal.dart';
+import 'controllers/loginController.dart';
 
 import 'carousel_items/Workouts/backWorkout.dart';
 
 class FF_posts extends StatefulWidget {
   @override
   _PostsPageState createState() => new _PostsPageState();
+
+  FF_posts({Key key, this.conn}) : super(key: key);
+  final LoginController conn;
 }
 
 class _PostsPageState extends State<FF_posts> {
@@ -29,7 +39,8 @@ class _PostsPageState extends State<FF_posts> {
     return result;
   }
 
-  //-----------------------------------
+  //-----------------------------------------------------Title----------------------------------------------------------
+
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,40 +48,6 @@ class _PostsPageState extends State<FF_posts> {
       body: Column(children: [
         Stack(
           children: <Widget>[
-            Transform.translate(
-              offset: Offset(0.0, 679.0),
-              child: SizedBox(
-                width: 411.0,
-                height: 52.0,
-                child: Stack(
-                  children: <Widget>[
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(0.0, -45.0, 415.0, 52.0),
-                      size: Size(411.0, 52.0),
-                      pinLeft: true,
-                      pinRight: true,
-                      pinTop: true,
-                      pinBottom: true,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xff343a5e),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Transform.translate(
-              offset: Offset(0.0, 637.0),
-              child: Container(
-                width: 137.0,
-                height: 52.0,
-                decoration: BoxDecoration(
-                  color: const Color(0xff262b46),
-                ),
-              ),
-            ),
             Container(
               width: 411.0,
               height: 52.0,
@@ -78,8 +55,9 @@ class _PostsPageState extends State<FF_posts> {
                 color: const Color(0xff343a5e),
               ),
             ),
-            Transform.translate(
-              offset: Offset(167.0, 14.0),
+            Positioned(
+              top: 10,
+              left: 165,
               child: SizedBox(
                 width: 78.0,
                 height: 29.0,
@@ -103,41 +81,37 @@ class _PostsPageState extends State<FF_posts> {
                 )),
               ),
             ),
-            Transform.translate(
-              offset: Offset(357.5, 22.5),
-              child: SizedBox(
-                width: 21.0,
-                height: 12.0,
-                child: Stack(
-                  children: <Widget>[
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(0.0, 0.0, 20.5, 1.0),
-                      size: Size(20.5, 12.3),
-                      pinLeft: true,
-                      pinRight: true,
-                      pinTop: true,
-                      fixedHeight: true,
-                    ),
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(0.0, 6.2, 20.5, 1.0),
-                      size: Size(20.5, 12.3),
-                      pinLeft: true,
-                      pinRight: true,
-                      fixedHeight: true,
-                    ),
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(0.0, 12.3, 20.5, 1.0),
-                      size: Size(20.5, 12.3),
-                      pinLeft: true,
-                      pinRight: true,
-                      pinBottom: true,
-                      fixedHeight: true,
-                    ),
-                  ],
-                ),
+            SizedBox(
+              width: 21.0,
+              height: 12.0,
+              child: Stack(
+                children: <Widget>[
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 0.0, 20.5, 1.0),
+                    size: Size(20.5, 12.3),
+                    pinLeft: true,
+                    pinRight: true,
+                    pinTop: true,
+                    fixedHeight: true,
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 6.2, 20.5, 1.0),
+                    size: Size(20.5, 12.3),
+                    pinLeft: true,
+                    pinRight: true,
+                    fixedHeight: true,
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 12.3, 20.5, 1.0),
+                    size: Size(20.5, 12.3),
+                    pinLeft: true,
+                    pinRight: true,
+                    pinBottom: true,
+                    fixedHeight: true,
+                  ),
+                ],
               ),
             ),
-            Transform.translate(offset: Offset(100.5, 100.5)),
           ],
         ),
         Text("WORKOUTS",
@@ -230,10 +204,50 @@ class _PostsPageState extends State<FF_posts> {
             });
           }).toList(),
         ),
+        Container(
+          margin: EdgeInsets.fromLTRB(0, 34.4, 0, 0),
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                left: 0,
+                height: 50.0,
+                width: 412.0,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xff343a5e),
+                  ),
+                ),
+              ),
+              Positioned(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Icon(
+                      Icons.search,
+                      color: Colors.white,
+                      size: 25.0,
+                    ),
+                    new IconButton(
+                      icon: Icon(Icons.timeline, color: Colors.white),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => FF_dashboard()));
+                      },
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        )
       ]),
     );
   }
 }
+
+//-----------------------------------------------------Posts----------------------------------------------------------
 
 class Post4 extends StatelessWidget {
   const Post4({Key key}) : super(key: key);
@@ -599,6 +613,7 @@ class Post1 extends StatelessWidget {
   }
 }
 
+//-----------------------------------------------------Meal----------------------------------------------------------
 class Meal4 extends StatelessWidget {
   const Meal4({Key key}) : super(key: key);
 
@@ -606,12 +621,13 @@ class Meal4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          // image: const DecorationImage(
-          //   image: NetworkImage(
-          //       INSERT CAROUSEL IMAGE HERE,
-          //   fit: BoxFit.cover,
-          // ),
-          ),
+
+        color: Colors.white,
+        image: const DecorationImage(
+          image: AssetImage('assets/carousel_images/meal4.PNG'),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -620,7 +636,7 @@ class Meal4 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
-          Text("*****",
+          Text("Vegan Meal",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 17.0,
@@ -662,7 +678,7 @@ class Meal4 extends StatelessWidget {
               color: const Color(0xff343a5e),
               height: 630,
               child: Column(children: <Widget>[
-                //Insert Content here
+                veganMeal,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -698,12 +714,12 @@ class Meal3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          // image: const DecorationImage(
-          //   image: NetworkImage(
-          //       INSERT CAROUSEL IMAGE HERE,
-          //   fit: BoxFit.cover,
-          // ),
-          ),
+        color: Colors.white,
+        image: const DecorationImage(
+          image: AssetImage('assets/carousel_images/meal3.PNG'),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -712,7 +728,7 @@ class Meal3 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
-          Text("*****",
+          Text("Gluten Free Meal",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 17.0,
@@ -754,7 +770,7 @@ class Meal3 extends StatelessWidget {
               color: const Color(0xff343a5e),
               height: 630,
               child: Column(children: <Widget>[
-                //Insert Content here
+                glutenFreeMeal,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -790,12 +806,12 @@ class Meal2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          // image: const DecorationImage(
-          //   image: NetworkImage(
-          //       INSERT CAROUSEL IMAGE HERE,
-          //   fit: BoxFit.cover,
-          // ),
-          ),
+        color: Colors.white,
+        image: const DecorationImage(
+          image: AssetImage('assets/carousel_images/dairyFree.PNG'),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -804,7 +820,7 @@ class Meal2 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
-          Text("*****",
+          Text("Dairy Free",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 17.0,
@@ -846,7 +862,7 @@ class Meal2 extends StatelessWidget {
               color: const Color(0xff343a5e),
               height: 630,
               child: Column(children: <Widget>[
-                //Insert Content here
+                dairyFreeMeal,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -882,12 +898,12 @@ class Meal1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          // image: const DecorationImage(
-          //   image: NetworkImage(
-          //       INSERT CAROUSEL IMAGE HERE,
-          //   fit: BoxFit.cover,
-          // ),
-          ),
+        color: Colors.white,
+        image: const DecorationImage(
+          image: AssetImage('assets/carousel_images/vegmeal.PNG'),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -896,7 +912,7 @@ class Meal1 extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold)),
-          Text("*****",
+          Text("Vegetarian",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 17.0,
@@ -938,7 +954,7 @@ class Meal1 extends StatelessWidget {
               color: const Color(0xff343a5e),
               height: 630,
               child: Column(children: <Widget>[
-                //Insert Content here
+                vegMeal,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
