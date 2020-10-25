@@ -91,7 +91,7 @@ class FF_logIn extends StatelessWidget {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => FF_signUp()));
+                              builder: (context) => FF_signUp(conn: this.conn)));
                     },
                     color: const Color(0xff27ae60),
                     child: const Text(
