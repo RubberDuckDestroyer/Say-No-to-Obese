@@ -15,7 +15,7 @@ final veganMeal = Column(children: <Widget>[
   Padding(
       padding: EdgeInsets.all(10),
       child: Image.asset(
-        'assets/carousel_images/veganMeal.PNG',
+        'assets/carousel_images/vegan.PNG',
         scale: 2.0,
       ))
 ]);
