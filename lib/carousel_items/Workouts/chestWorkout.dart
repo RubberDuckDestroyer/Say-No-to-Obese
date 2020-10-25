@@ -15,8 +15,7 @@ final chestWorkout = Column(children: <Widget>[
   Padding(
       padding: EdgeInsets.all(10),
       child: Text(
-          '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
-          textAlign: TextAlign.center,
+          "For most guys, a chest workout centres around three moves: a bench press completed in the flat, incline and decline positions. Follow the routine above for guarateed results",
           style: TextStyle(
             fontFamily: 'Montserrat',
             fontSize: 17,
@@ -26,7 +25,7 @@ final chestWorkout = Column(children: <Widget>[
   Padding(
       padding: EdgeInsets.all(10),
       child: Image.asset(
-        'assets/carousel_images/workout1.jpg',
-        scale: 2.5,
+        'assets/carousel_images/chest.PNG',
+        scale: 1.0,
       ))
 ]);
