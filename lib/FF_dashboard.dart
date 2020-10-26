@@ -4,15 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:intl/intl.dart';
 
+import 'controllers/loginController.dart';
+
 class FF_dashboard extends StatefulWidget {
   @override
-  _DashboardPageState createState() => new _DashboardPageState();
+  _DashboardPageState createState() => new _DashboardPageState(conn: this.conn);
+
+  FF_dashboard({Key key, this.conn}) : super(key: key);
+  final LoginController conn;
 }
 
 class _DashboardPageState extends State<FF_dashboard> {
+  _DashboardPageState({Key key, this.conn});
+  final LoginController conn;
+
   @override
   int _currentIndex = 0;
-
   static final DateTime now = DateTime.now();
   static final DateFormat formatter =
       DateFormat('dd' + '/' + 'MM' + '/' + 'yyyy');
@@ -306,8 +313,10 @@ class _DashboardPageState extends State<FF_dashboard> {
           setState(() {
             _currentIndex = index;
             if (index == 0) {
-              Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => FF_posts()));
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => FF_posts(conn: conn)));
             }
           });
         },

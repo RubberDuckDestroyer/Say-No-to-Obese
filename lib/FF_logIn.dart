@@ -268,7 +268,8 @@ class FF_logIn extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => FF_dashboard()));
+                                  builder: (context) =>
+                                      FF_dashboard(conn: this.conn)));
                         } else {
                           await showDialog<void>(
                             context: context,
