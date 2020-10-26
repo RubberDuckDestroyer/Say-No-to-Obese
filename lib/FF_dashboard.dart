@@ -101,7 +101,7 @@ class _DashboardPageState extends State<FF_dashboard> {
                           fontFamily: 'Montserrat',
                           fontSize: 18,
                           color: Colors.white,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w400,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -109,7 +109,7 @@ class _DashboardPageState extends State<FF_dashboard> {
                         children: [
                           Column(children: [
                             Padding(
-                                padding: EdgeInsets.fromLTRB(5, 25, 0, 0),
+                                padding: EdgeInsets.fromLTRB(5, 5, 0, 0),
                                 child: Text(
                                   '88 KG',
                                   style: TextStyle(
@@ -138,7 +138,7 @@ class _DashboardPageState extends State<FF_dashboard> {
                           ]),
                           Column(children: [
                             Padding(
-                                padding: EdgeInsets.fromLTRB(40, 25, 0, 0),
+                                padding: EdgeInsets.fromLTRB(40, 5, 0, 0),
                                 child: Text(
                                   '80 KG',
                                   style: TextStyle(
@@ -165,37 +165,55 @@ class _DashboardPageState extends State<FF_dashboard> {
                                   textAlign: TextAlign.center,
                                 )),
                           ]),
-                          Column(children: [
-                            Padding(
-                                padding: EdgeInsets.fromLTRB(63, 25, 0, 0),
-                                child: Text(
-                                  '8 KG',
-                                  style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                )),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Padding(
-                                padding: EdgeInsets.fromLTRB(63, 0, 0, 0),
-                                child: Text(
-                                  'To Go! ',
-                                  style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.w200,
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                )),
-                          ]),
+                          Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Padding(
+                                    padding: EdgeInsets.fromLTRB(60, 5, 5, 0),
+                                    child: Text(
+                                      '8 KG',
+                                      style: TextStyle(
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    )),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Padding(
+                                    padding: EdgeInsets.fromLTRB(60, 0, 5, 0),
+                                    child: Text(
+                                      'To Go! ',
+                                      style: TextStyle(
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w200,
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    )),
+                              ]),
                         ],
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(
+                              padding: EdgeInsets.fromLTRB(0, 2, 0, 0),
+                              child: FlatButton(
+                                  onPressed: () {
+                                    Editweightpopup(context);
+                                  },
+                                  color: const Color.fromRGBO(91, 99, 154, 100),
+                                  child: Text(
+                                    'Update',
+                                    style: TextStyle(color: Colors.white),
+                                  )))
+                        ],
+                      )
                     ],
                   )),
 
@@ -313,5 +331,92 @@ class _DashboardPageState extends State<FF_dashboard> {
         },
       ),
     );
+  }
+
+  // ignore: non_constant_identifier_names
+  void Editweightpopup(context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              color: const Color(0xff343a5e),
+              height: 278,
+              child: Column(children: <Widget>[
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Enter New Weight:',
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Stack(children: <Widget>[
+                  Positioned(
+                    top: 0,
+                    left: 150,
+                    child: Container(
+                      height: 30,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 30,
+                        width: 100,
+                        child: TextField(
+                          keyboardType: TextInputType.number,
+                          enabled: true,
+                        ),
+                      )
+                    ],
+                  ),
+                ]),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                      color: const Color.fromRGBO(91, 99, 154, 100),
+                      child: Text(
+                        'Back',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      color: const Color.fromRGBO(91, 99, 154, 100),
+                      child: Text(
+                        'Update',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                )
+              ]));
+        });
   }
 }
