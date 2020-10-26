@@ -25,7 +25,8 @@ class FF_posts extends StatefulWidget {
 }
 
 class _PostsPageState extends State<FF_posts> {
-  int _currentIndex = 0;
+  int _carouselcurrentIndex = 0;
+  int _pageIndex = 0;
 
   List WorkoutList = [Workout1(), Workout2(), Workout3(), Workout4()];
   List MealList = [Meal1(), Meal2(), Meal3(), Meal4()];
@@ -126,7 +127,7 @@ class _PostsPageState extends State<FF_posts> {
             aspectRatio: 2.0,
             onPageChanged: (index, reason) {
               setState(() {
-                _currentIndex = index;
+                _carouselcurrentIndex = index;
               });
             },
           ),
@@ -156,7 +157,7 @@ class _PostsPageState extends State<FF_posts> {
             aspectRatio: 2.0,
             onPageChanged: (index, reason) {
               setState(() {
-                _currentIndex = index;
+                _carouselcurrentIndex = index;
               });
             },
           ),
@@ -186,7 +187,7 @@ class _PostsPageState extends State<FF_posts> {
             aspectRatio: 2.0,
             onPageChanged: (index, reason) {
               setState(() {
-                _currentIndex = index;
+                _carouselcurrentIndex = index;
               });
             },
           ),
@@ -206,7 +207,7 @@ class _PostsPageState extends State<FF_posts> {
       ]),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color(0xff343a5e),
-        currentIndex: _currentIndex,
+        currentIndex: _pageIndex,
         items: [
           BottomNavigationBarItem(
             icon: Icon(
@@ -231,7 +232,7 @@ class _PostsPageState extends State<FF_posts> {
         ],
         onTap: (index) {
           setState(() {
-            _currentIndex = index;
+            _pageIndex = index;
             if (index == 1) {
               Navigator.push(context,
                   new MaterialPageRoute(builder: (context) => FF_dashboard()));

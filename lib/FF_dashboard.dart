@@ -71,7 +71,7 @@ class _DashboardPageState extends State<FF_dashboard> {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(20, 70.4, 0, 0),
+              margin: EdgeInsets.fromLTRB(10, 70.4, 0, 0),
               child: Text(
                 formatted,
                 style: TextStyle(
@@ -85,25 +85,119 @@ class _DashboardPageState extends State<FF_dashboard> {
             //----------------------------My details------------------------------
             Column(children: <Widget>[
               Container(
-                width: 411.0,
-                height: 142.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff343a5e),
-                ),
-                margin: EdgeInsets.fromLTRB(10, 110.4, 10, 0),
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  'My Details',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w300,
+                  width: 411.0,
+                  height: 142.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color(0xff343a5e),
                   ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
+                  margin: EdgeInsets.fromLTRB(10, 110.4, 10, 0),
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'My Goal',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Row(
+                        children: [
+                          Column(children: [
+                            Padding(
+                                padding: EdgeInsets.fromLTRB(5, 25, 0, 0),
+                                child: Text(
+                                  '88 KG',
+                                  style: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                )),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Padding(
+                                padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                                child: Text(
+                                  'Current Weight ',
+                                  style: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w200,
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                )),
+                          ]),
+                          Column(children: [
+                            Padding(
+                                padding: EdgeInsets.fromLTRB(40, 25, 0, 0),
+                                child: Text(
+                                  '80 KG',
+                                  style: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                )),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Padding(
+                                padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
+                                child: Text(
+                                  'Goal Weight ',
+                                  style: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w200,
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                )),
+                          ]),
+                          Column(children: [
+                            Padding(
+                                padding: EdgeInsets.fromLTRB(63, 25, 0, 0),
+                                child: Text(
+                                  '8 KG',
+                                  style: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                )),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Padding(
+                                padding: EdgeInsets.fromLTRB(63, 0, 0, 0),
+                                child: Text(
+                                  'To Go! ',
+                                  style: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w200,
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                )),
+                          ]),
+                        ],
+                      ),
+                    ],
+                  )),
 
               //----------------------------My Meals------------------------------
               Container(
