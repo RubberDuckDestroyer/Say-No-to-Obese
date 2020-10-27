@@ -26,6 +26,7 @@ After installing Flutter and Android Studio, clone the repository using this com
 To run the application, open the cloned repository in Visual Studio Code.
 Run the following command in the terminal `flutter pub get` to install the dependencies.
 Run the app in a simulator or a device with USB Debugging enabled using `Ctrl+F5` or  select `Run` from the options in the top left corner and select `Run without debugging` from the dropdown.
+
 ![fitness freak](https://media.giphy.com/media/Y9zvpD9uHA1Tq/giphy.gif)
 
 *this image is taken from [Giphy](https://giphy.com/)*
