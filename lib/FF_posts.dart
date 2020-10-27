@@ -3,6 +3,7 @@ import 'package:fitness_freaks/carousel_items/Workouts/ShoulderWorkout.dart';
 import 'package:fitness_freaks/carousel_items/Workouts/chestWorkout.dart';
 import 'package:fitness_freaks/carousel_items/Workouts/legsWorkout.dart';
 import 'package:fitness_freaks/carousel_items/Workouts/meals/vegetarianMeal.dart';
+import 'package:fitness_freaks/carousel_items/Workouts/workoutCarousel.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,15 +19,24 @@ import 'carousel_items/Workouts/backWorkout.dart';
 
 class FF_posts extends StatefulWidget {
   @override
-  _PostsPageState createState() => new _PostsPageState();
-
   FF_posts({Key key, this.conn}) : super(key: key);
   final LoginController conn;
+
+  _PostsPageState createState() => new _PostsPageState(conn: this.conn);
 }
 
 class _PostsPageState extends State<FF_posts> {
+  LoginController _conn;
+
   int _carouselcurrentIndex = 0;
   int _pageIndex = 0;
+  // final List WorkoutList;
+  // final List MealList;
+  // final List PostsList;
+  List WorkoutListFromDatabase;
+  _PostsPageState({LoginController conn}) {
+    this._conn = conn;
+  }
 
   List WorkoutList = [Workout1(), Workout2(), Workout3(), Workout4()];
   List MealList = [Meal1(), Meal2(), Meal3(), Meal4()];
@@ -40,207 +50,238 @@ class _PostsPageState extends State<FF_posts> {
     return result;
   }
 
+  @override
+  // ignore: must_call_super
+  initState() {
+    super.initState();
+
+    workoutCarousel(this._conn).then((value) {
+      print(value);
+      if (value != null) {
+        setState(() {
+          WorkoutListFromDatabase = value;
+        });
+      }
+    });
+  }
   //-----------------------------------------------------Title----------------------------------------------------------
 
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xffffffff),
-      body: Column(children: [
-        Stack(
-          children: <Widget>[
-            Container(
-              width: 411.0,
-              height: 52.0,
-              decoration: BoxDecoration(
-                color: const Color(0xff343a5e),
+    if (WorkoutList == null) {
+      return new Scaffold(
+        appBar: new AppBar(
+          title: new Text("Loading..."),
+        ),
+      );
+      // } else {
+      //   return new Scaffold(
+      //     appBar: new AppBar(
+      //       title: new Text("Loading Complete..."),
+      //     ),
+      //   );
+      // }
+    } else {
+      return Scaffold(
+        backgroundColor: const Color(0xffffffff),
+        body: Column(children: [
+          Stack(
+            children: <Widget>[
+              Container(
+                width: 411.0,
+                height: 52.0,
+                decoration: BoxDecoration(
+                  color: const Color(0xff343a5e),
+                ),
+              ),
+              Positioned(
+                top: 10,
+                left: 165,
+                child: SizedBox(
+                  width: 78.0,
+                  height: 29.0,
+                  child: SingleChildScrollView(
+                      child: Text(
+                    'POSTS\n',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 23,
+                      color: const Color(0xffffffff),
+                      fontWeight: FontWeight.w200,
+                      shadows: [
+                        Shadow(
+                          color: const Color(0x29000000),
+                          offset: Offset(0, 12),
+                          blurRadius: 6,
+                        )
+                      ],
+                    ),
+                    textAlign: TextAlign.center,
+                  )),
+                ),
+              ),
+              SizedBox(
+                width: 21.0,
+                height: 12.0,
+                child: Stack(
+                  children: <Widget>[
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(0.0, 0.0, 20.5, 1.0),
+                      size: Size(20.5, 12.3),
+                      pinLeft: true,
+                      pinRight: true,
+                      pinTop: true,
+                      fixedHeight: true,
+                    ),
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(0.0, 6.2, 20.5, 1.0),
+                      size: Size(20.5, 12.3),
+                      pinLeft: true,
+                      pinRight: true,
+                      fixedHeight: true,
+                    ),
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(0.0, 12.3, 20.5, 1.0),
+                      size: Size(20.5, 12.3),
+                      pinLeft: true,
+                      pinRight: true,
+                      pinBottom: true,
+                      fixedHeight: true,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Text("WORKOUTS",
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 20,
+                color: const Color.fromRGBO(0, 0, 0, 100),
+                fontWeight: FontWeight.w400,
+              )),
+          CarouselSlider(
+            options: CarouselOptions(
+              height: 160.0,
+              aspectRatio: 2.0,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _carouselcurrentIndex = index;
+                });
+              },
+            ),
+            items: WorkoutListFromDatabase.map((card) {
+              return Builder(builder: (BuildContext context) {
+                return Container(
+                  height: MediaQuery.of(context).size.height * 0.30,
+                  width: MediaQuery.of(context).size.width,
+                  child: Card(
+                    color: Colors.blueAccent,
+                    child: card,
+                  ),
+                );
+              });
+            }).toList(),
+          ),
+          Text("MEALS",
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 20,
+                color: const Color.fromRGBO(0, 0, 0, 100),
+                fontWeight: FontWeight.w400,
+              )),
+          CarouselSlider(
+            options: CarouselOptions(
+              height: 160.0,
+              aspectRatio: 2.0,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _carouselcurrentIndex = index;
+                });
+              },
+            ),
+            items: MealList.map((card) {
+              return Builder(builder: (BuildContext context) {
+                return Container(
+                  height: MediaQuery.of(context).size.height * 0.30,
+                  width: MediaQuery.of(context).size.width,
+                  child: Card(
+                    color: Colors.blueAccent,
+                    child: card,
+                  ),
+                );
+              });
+            }).toList(),
+          ),
+          Text("MOTIVATION",
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 20,
+                color: const Color.fromRGBO(0, 0, 0, 100),
+                fontWeight: FontWeight.w400,
+              )),
+          CarouselSlider(
+            options: CarouselOptions(
+              height: 160.0,
+              aspectRatio: 2.0,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _carouselcurrentIndex = index;
+                });
+              },
+            ),
+            items: PostsList.map((card) {
+              return Builder(builder: (BuildContext context) {
+                return Container(
+                  height: MediaQuery.of(context).size.height * 0.30,
+                  width: MediaQuery.of(context).size.width,
+                  child: Card(
+                    color: Colors.blueAccent,
+                    child: card,
+                  ),
+                );
+              });
+            }).toList(),
+          ),
+        ]),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: const Color(0xff343a5e),
+          currentIndex: _pageIndex,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
+              title: Text(
+                'Posts',
+                style: TextStyle(color: Colors.white),
               ),
             ),
-            Positioned(
-              top: 10,
-              left: 165,
-              child: SizedBox(
-                width: 78.0,
-                height: 29.0,
-                child: SingleChildScrollView(
-                    child: Text(
-                  'POSTS\n',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 23,
-                    color: const Color(0xffffffff),
-                    fontWeight: FontWeight.w200,
-                    shadows: [
-                      Shadow(
-                        color: const Color(0x29000000),
-                        offset: Offset(0, 12),
-                        blurRadius: 6,
-                      )
-                    ],
-                  ),
-                  textAlign: TextAlign.center,
-                )),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.timeline,
+                color: Colors.white,
               ),
-            ),
-            SizedBox(
-              width: 21.0,
-              height: 12.0,
-              child: Stack(
-                children: <Widget>[
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 20.5, 1.0),
-                    size: Size(20.5, 12.3),
-                    pinLeft: true,
-                    pinRight: true,
-                    pinTop: true,
-                    fixedHeight: true,
-                  ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 6.2, 20.5, 1.0),
-                    size: Size(20.5, 12.3),
-                    pinLeft: true,
-                    pinRight: true,
-                    fixedHeight: true,
-                  ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 12.3, 20.5, 1.0),
-                    size: Size(20.5, 12.3),
-                    pinLeft: true,
-                    pinRight: true,
-                    pinBottom: true,
-                    fixedHeight: true,
-                  ),
-                ],
+              title: Text(
+                'Dashboard',
+                style: TextStyle(color: Colors.white),
               ),
             ),
           ],
-        ),
-        Text("WORKOUTS",
-            style: TextStyle(
-              fontFamily: 'Montserrat',
-              fontSize: 20,
-              color: const Color.fromRGBO(0, 0, 0, 100),
-              fontWeight: FontWeight.w400,
-            )),
-        CarouselSlider(
-          options: CarouselOptions(
-            height: 160.0,
-            aspectRatio: 2.0,
-            onPageChanged: (index, reason) {
-              setState(() {
-                _carouselcurrentIndex = index;
-              });
-            },
-          ),
-          items: WorkoutList.map((card) {
-            return Builder(builder: (BuildContext context) {
-              return Container(
-                height: MediaQuery.of(context).size.height * 0.30,
-                width: MediaQuery.of(context).size.width,
-                child: Card(
-                  color: Colors.blueAccent,
-                  child: card,
-                ),
-              );
+          onTap: (index) {
+            setState(() {
+              _pageIndex = index;
+              if (index == 1) {
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (context) => FF_dashboard()));
+              }
             });
-          }).toList(),
+          },
         ),
-        Text("MEALS",
-            style: TextStyle(
-              fontFamily: 'Montserrat',
-              fontSize: 20,
-              color: const Color.fromRGBO(0, 0, 0, 100),
-              fontWeight: FontWeight.w400,
-            )),
-        CarouselSlider(
-          options: CarouselOptions(
-            height: 160.0,
-            aspectRatio: 2.0,
-            onPageChanged: (index, reason) {
-              setState(() {
-                _carouselcurrentIndex = index;
-              });
-            },
-          ),
-          items: MealList.map((card) {
-            return Builder(builder: (BuildContext context) {
-              return Container(
-                height: MediaQuery.of(context).size.height * 0.30,
-                width: MediaQuery.of(context).size.width,
-                child: Card(
-                  color: Colors.blueAccent,
-                  child: card,
-                ),
-              );
-            });
-          }).toList(),
-        ),
-        Text("MOTIVATION",
-            style: TextStyle(
-              fontFamily: 'Montserrat',
-              fontSize: 20,
-              color: const Color.fromRGBO(0, 0, 0, 100),
-              fontWeight: FontWeight.w400,
-            )),
-        CarouselSlider(
-          options: CarouselOptions(
-            height: 160.0,
-            aspectRatio: 2.0,
-            onPageChanged: (index, reason) {
-              setState(() {
-                _carouselcurrentIndex = index;
-              });
-            },
-          ),
-          items: PostsList.map((card) {
-            return Builder(builder: (BuildContext context) {
-              return Container(
-                height: MediaQuery.of(context).size.height * 0.30,
-                width: MediaQuery.of(context).size.width,
-                child: Card(
-                  color: Colors.blueAccent,
-                  child: card,
-                ),
-              );
-            });
-          }).toList(),
-        ),
-      ]),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0xff343a5e),
-        currentIndex: _pageIndex,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            title: Text(
-              'Posts',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.timeline,
-              color: Colors.white,
-            ),
-            title: Text(
-              'Dashboard',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        ],
-        onTap: (index) {
-          setState(() {
-            _pageIndex = index;
-            if (index == 1) {
-              Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => FF_dashboard()));
-            }
-          });
-        },
-      ),
-    );
+      );
+    }
   }
 }
 

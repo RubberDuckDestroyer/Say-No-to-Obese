@@ -6,6 +6,7 @@ import 'package:mongo_dart/mongo_dart.dart';
 import 'package:fitness_freaks/scripts/resetPassword.dart';
 import 'package:fitness_freaks/scripts/readValue.dart';
 import 'package:fitness_freaks/scripts/createUser.dart';
+import 'package:fitness_freaks/scripts/readManyValues.dart';
 
 // import 'package:dotenv/dotenv.dart' show load, env;
 
@@ -103,5 +104,17 @@ class LoginController {
     final result = await writeValueFor(this._db, "users", document);
 
     return result;
+  }
+
+  Future<List> readMultipleValues(String collection, dynamic selector) async {
+    print("Reading valuse");
+    final result = await readMany(this._db, collection, selector);
+    print(result);
+    if (result.length > 0) {
+      print(result);
+      return result;
+    } else {
+      return null;
+    }
   }
 }
