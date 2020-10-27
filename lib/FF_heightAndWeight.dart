@@ -5,16 +5,17 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fitness_freaks/styles/NormalWhiteText.dart';
 
-import 'FF_dashboard.dart';
+class FF_heightAndWeight extends StatefulWidget {
+  @override
+  _HeightAndWeightstate createState() => new _HeightAndWeightstate();
+}
 
-class FF_heightAndWeight extends StatelessWidget {
-  FF_heightAndWeight({
-    Key key,
-  }) : super(key: key);
-
+class _HeightAndWeightstate extends State<FF_heightAndWeight> {
+  bool fatButton = true;
+  bool muscleButton = true;
+  bool pressAttention = false;
   @override
   Widget build(BuildContext context) {
-    // color: pressAttention ? Colors.grey : Colors.blue,
     return Scaffold(
       backgroundColor: const Color(0xff343a5e),
       body: Stack(
@@ -178,8 +179,9 @@ class FF_heightAndWeight extends StatelessWidget {
                   width: 281,
                   height: 107,
                   child: RaisedButton(
-                    onPressed: () {},
-                    color: Colors.white,
+                    color: muscleButton ? Colors.white : Colors.blue,
+                    onPressed: () =>
+                        setState(() => muscleButton = !muscleButton),
                     child: Text(
                       'Gain Muscle',
                       style: TextStyle(
@@ -204,8 +206,8 @@ class FF_heightAndWeight extends StatelessWidget {
                   width: 281,
                   height: 107,
                   child: FlatButton(
-                    onPressed: () {},
-                    color: Colors.blue,
+                    color: fatButton ? Colors.white : Colors.blue,
+                    onPressed: () => setState(() => fatButton = !fatButton),
                     child: Text(
                       'Lose Fat',
                       style: TextStyle(

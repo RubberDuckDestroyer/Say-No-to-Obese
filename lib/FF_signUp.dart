@@ -1,21 +1,22 @@
-import 'dart:ffi';
-import 'package:fitness_freaks/FF_dashboard.dart';
 import 'package:fitness_freaks/FF_heightAndWeight.dart';
+import 'package:fitness_freaks/widgets/TextPopup.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:fitness_freaks/controllers/loginController.dart';
+import 'package:flutter/services.dart';
 
 class FF_signUp extends StatelessWidget {
-  // TextEditingController nameController = TextEditingController();
-  // TextEditingController passController = TextEditingController();
-  // LoginController conn = LoginController();
+  TextEditingController fullNameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passController = TextEditingController();
+  TextEditingController reEnterPassController = TextEditingController();
 
-  // String uri =
-  //     "mongodb+srv://fitnessfreaks:roW4x8esRB91viFi@cluster0.bqckt.mongodb.net/main?retryWrites=true&w=majority";
+  String uri =
+      "mongodb+srv://fitnessfreaks:roW4x8esRB91viFi@cluster0.bqckt.mongodb.net/main?retryWrites=true&w=majority";
 
-  FF_signUp({
-    Key key,
-  }) : super(key: key);
+  FF_signUp({Key key, this.conn}) : super(key: key);
+  final LoginController conn;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,12 +97,48 @@ class FF_signUp extends StatelessWidget {
                   width: 240,
                   height: 40,
                   child: FlatButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => FF_heightAndWeight()));
-                    },
+                    onPressed: () async {
+                      final email = emailController.text.toString();
+                      final password = passController.text.toString();
+                      final confirmPassword =
+                          reEnterPassController.text.toString();
+                      final name = fullNameController.text.toString();
+                      print(email);
+                      print((email.contains("@")));           
+                      if (email.contains("@") &&
+                          (confirmPassword == password)) {
+                        // Create user in db
+                        final res =
+                            await conn.createUser(name, email, password);
+                        if (res == true) {
+                          // Navigate to next page
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => FF_heightAndWeight()));
+                        } else {
+
+                          print('There was an error on creating user');
+
+                        //   return TextPopup(
+                        //         context: context,
+                        //         title: "ERROR",
+                        //         description: "Please enter a valid email address or Password",
+                        //       );
+                        }
+                      } else {
+                          await showDialog<void>(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return TextPopup(
+                                context: context,
+                                title: "ERROR",
+                                description: "Invalid email or password :(",
+                              );
+                            },
+                          );
+                        }
+                      },
                     color: const Color(0xff27ae60),
                     child: const Text(
                       "Sign Up",
@@ -150,9 +187,10 @@ class FF_signUp extends StatelessWidget {
                 width: 258.0,
                 height: 47.0,
                 child: TextField(
-                  // controller: nameController,
+                  controller: fullNameController,
                   enabled: true,
                   decoration: InputDecoration(hintText: 'Enter your Full Name'),
+                  keyboardType: TextInputType.name,
                 ),
               ),
             ],
@@ -190,6 +228,7 @@ class FF_signUp extends StatelessWidget {
                 width: 258.0,
                 height: 47.0,
                 child: TextField(
+                  controller: emailController,
                   enabled: true,
                   decoration:
                       InputDecoration(hintText: 'Enter your Email Address'),
@@ -231,7 +270,7 @@ class FF_signUp extends StatelessWidget {
                 width: 258.0,
                 height: 47.0,
                 child: TextField(
-                  // controller: passController,
+                  controller: passController,
                   enabled: true,
                   decoration: InputDecoration(hintText: 'Pick a Password'),
                   obscureText: true,
@@ -271,7 +310,7 @@ class FF_signUp extends StatelessWidget {
                 width: 258.0,
                 height: 47.0,
                 child: TextField(
-                  // controller: passController,
+                  controller: reEnterPassController,
                   enabled: true,
                   decoration:
                       InputDecoration(hintText: 'Re-enter the Password'),
